@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seneve Lihono — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       SLIDER PRINCIPAL (4 slides)
+  ══════════════════════════════════════ -->
+  <div class="slider" id="slider">
+
+    <!-- ══ SLIDE 0 — START ══ -->
+    <div class="slide" id="s0">
+      <div class="s0-bg"></div>
+      <div class="scanlines"></div>
+
+      <!-- Circuit board décoratif gauche -->
+      <svg class="circuit" viewBox="0 0 220 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 0 L40 120 L80 160 L80 250 L20 310 L20 400 L60 440 L60 550 L30 580 L30 800" stroke="#00e5ff" stroke-width="1.5" opacity="0.5"/>
+        <path d="M80 0 L80 60 L110 90 L110 180 L60 230" stroke="#00e5ff" stroke-width="1" opacity="0.3"/>
+        <circle cx="40"  cy="120" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="80"  cy="250" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="20"  cy="400" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="60"  cy="550" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="110" cy="180" r="3" fill="none" stroke="#00e5ff" stroke-width="1"   opacity="0.5"/>
+        <path d="M40 120 L10 120"  stroke="#00e5ff" stroke-width="1" opacity="0.4"/>
+        <path d="M80 250 L120 250" stroke="#00e5ff" stroke-width="1" opacity="0.4"/>
+        <path d="M20 400 L0 400"   stroke="#00e5ff" stroke-width="1" opacity="0.4"/>
+      </svg>
+
+      <!-- Personnage sombre (SVG art style Gachiakuta) -->
+      <div class="dark-figure">
+        <svg class="figure-svg" viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#ff3300" stop-opacity="1"/>
+              <stop offset="60%"  stop-color="#cc1100" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#660000" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="blur-eye">  <feGaussianBlur stdDeviation="4"/>  </filter>
+            <filter id="blur-soft"> <feGaussianBlur stdDeviation="12"/> </filter>
+          </defs>
+          <!-- Ombre corps -->
+          <ellipse cx="250" cy="600" rx="180" ry="120" fill="#080810" opacity="0.9"/>
+          <!-- Corps / cape sombre -->
+          <path d="M140 300 Q120 400 100 550 Q130 620 250 650 Q370 620 400 550 Q380 400 360 300 Q320 280 250 275 Q180 280 140 300Z" fill="#0a0810" opacity="0.95"/>
+          <!-- Tête -->
+          <path d="M165 180 Q150 150 160 120 Q170 70 250 60 Q330 70 340 120 Q350 150 335 180 Q330 240 320 270 Q290 285 250 285 Q210 285 180 270 Q170 240 165 180Z" fill="#0d0a14"/>
+          <!-- Cheveux hérissés gauche -->
+          <path d="M165 180 Q140 160 125 130 Q115 100 130 75 Q110 90 115 120 Q100 110 108 80 Q95 100 105 135 Q90 125 100 150 Q85 140 98 165 Q80 158 95 180 Q165 180 165 180Z" fill="#111118" opacity="0.9"/>
+          <!-- Cheveux hérissés droit -->
+          <path d="M335 180 Q360 160 375 130 Q385 100 370 75 Q390 90 385 120 Q400 110 392 80 Q405 100 395 135 Q410 125 402 150 Q415 140 402 165 Q420 158 405 180 Q335 180 335 180Z" fill="#111118" opacity="0.9"/>
+          <!-- Mèche du dessus -->
+          <path d="M185 75 Q200 40 250 35 Q300 40 315 75 Q310 45 295 30 Q270 15 230 20 Q205 25 185 75Z" fill="#0d0a14"/>
+          <!-- Ombre visage -->
+          <path d="M185 150 Q190 200 200 240 Q220 270 250 272 Q280 270 300 240 Q310 200 315 150 Q295 135 250 133 Q205 135 185 150Z" fill="#0c0a12"/>
+          <!-- Yeux rouges lumineux -->
+          <ellipse cx="207" cy="185" rx="20" ry="12" fill="url(#eyeGlow)" filter="url(#blur-eye)" opacity="0.9"/>
+          <ellipse cx="293" cy="185" rx="20" ry="12" fill="url(#eyeGlow)" filter="url(#blur-eye)" opacity="0.9"/>
+          <ellipse cx="207" cy="185" rx="8" ry="6" fill="#ff2200"/>
+          <ellipse cx="293" cy="185" rx="8" ry="6" fill="#ff2200"/>
+          <ellipse cx="207" cy="185" rx="3" ry="3" fill="#fff" opacity="0.6"/>
+          <ellipse cx="293" cy="185" rx="3" ry="3" fill="#fff" opacity="0.6"/>
+          <!-- Halo rouge ambiant -->
+          <ellipse cx="250" cy="185" rx="120" ry="60" fill="#ff1100" opacity="0.05" filter="url(#blur-soft)"/>
+          <!-- Col / cou -->
+          <path d="M220 272 Q235 290 250 295 Q265 290 280 272 Q265 285 250 288 Q235 285 220 272Z" fill="#0a0810"/>
+        </svg>
+      </div>
+
+      <!-- Contenu texte gauche -->
+      <div class="s0-left">
+        <div class="tag-line">SYSTEM_INIT — UA LITTLE ROCK / CS</div>
+        <div class="big-name">
+          <div class="glitch-wrap" data-text="SENEVE">SENEVE</div>
+          <span class="glitch-wrap" data-text="LIHONO">LIHONO</span>
+        </div>
+        <div class="sub-name">Freshman · Computer Science · Developer</div>
+        <div class="divider"></div>
+        <div style="position:relative; display:inline-block;">
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+          <button class="start-btn" onclick="goTo(1)">
+            ACCEDER AU PROFIL <span class="arrow">▶</span>
+          </button>
+        </div>
+      </div>
+    </div><!-- /s0 -->
+
+
+    <!-- ══ SLIDE 1 — WHO I AM ══ -->
+    <div class="slide" id="s1">
+      <div class="s1-bg"></div>
+      <div class="scanlines"></div>
+
+      <svg class="circuit" viewBox="0 0 220 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 0 L40 120 L80 160 L80 250 L20 310 L20 400 L60 440 L60 550 L30 580 L30 800" stroke="#ff2d2d" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="40" cy="120" r="5" fill="none" stroke="#ff2d2d" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="80" cy="250" r="5" fill="none" stroke="#ff2d2d" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="20" cy="400" r="5" fill="none" stroke="#ff2d2d" stroke-width="1.5" opacity="0.6"/>
+      </svg>
+
+      <div class="slide-header">
+        <div class="section-num">// 01 — IDENTITY</div>
+        <div class="section-title">WHO <em>I AM</em></div>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="bio-grid">
+        <div class="bio-card">
+          <div class="bio-label">Origine</div>
+          <div class="bio-text">Né à Kinshasa, RDC. Multilingue — parle Français, Lingala et Swahili. Maintenant basé à Little Rock, Arkansas.</div>
+        </div>
+        <div class="bio-card">
+          <div class="bio-label">Formation</div>
+          <div class="bio-text">Étudiant Freshman en Computer Science à UA Little Rock. Passionné par la programmation depuis ses débuts avec Scratch.</div>
+        </div>
+        <div class="bio-card">
+          <div class="bio-label">Expérience</div>
+          <div class="bio-text">Formation Scratch &amp; drone programming. Bénévole IT services au Summit Church. Toujours en train d'explorer de nouvelles technologies.</div>
+          <div class="tag-list">
+            <span class="tag">Scratch</span>
+            <span class="tag">Drone</span>
+            <span class="tag">IT Support</span>
+          </div>
+        </div>
+        <div class="bio-card">
+          <div class="bio-label">Hobbies</div>
+          <div class="bio-text">Football · Écriture · Animes &amp; Cartoons · Gaming · Cuisine · Batterie · Studio musique maison</div>
+          <div class="tag-list">
+            <span class="tag red">⚽ Soccer</span>
+            <span class="tag red">🥁 Drums</span>
+            <span class="tag red">✍ Stories</span>
+            <span class="tag red">🎌 Anime</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-arrow nav-prev" onclick="goTo(0)">◀ RETOUR</button>
+      <button class="nav-arrow nav-next" onclick="goTo(2)">SUITE ▶</button>
+    </div><!-- /s1 -->
+
+
+    <!-- ══ SLIDE 2 — ÉTUDES & MOTIVATION ══ -->
+    <div class="slide" id="s2">
+      <div class="s2-bg"></div>
+      <div class="scanlines"></div>
+
+      <svg class="circuit" viewBox="0 0 220 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 0 L40 120 L80 160 L80 250 L20 310 L20 400 L60 440 L60 550 L30 580 L30 800" stroke="#00e5ff" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="40" cy="120" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="80" cy="250" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="20" cy="400" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+      </svg>
+
+      <div class="slide-header">
+        <div class="section-num">// 02 — VISION</div>
+        <div class="section-title">ÉTUDES &amp; <em>MOTIVATION</em></div>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-block">
+          <div class="block-title">📡 Ce que j'étudie</div>
+          <div class="study-item"><div class="study-dot"></div><div class="study-text">Computer Science — Algorithmique, structures de données, logique computationnelle</div></div>
+          <div class="study-item"><div class="study-dot"></div><div class="study-text">Programmation : Python, Java, HTML/CSS — en cours d'apprentissage continu</div></div>
+          <div class="study-item"><div class="study-dot"></div><div class="study-text">Réseaux &amp; systèmes — initiation à l'architecture informatique</div></div>
+          <div class="study-item"><div class="study-dot"></div><div class="study-text">Mathématiques discrètes — la base de tout en CS</div></div>
+        </div>
+        <div class="info-block red-block">
+          <div class="block-title">🔥 Ce qui me motive</div>
+          <div class="motiv-item"><div class="motiv-icon">⚡</div><div class="study-text">Créer des outils qui simplifient la vie des gens et ont un impact réel dans la société</div></div>
+          <div class="motiv-item"><div class="motiv-icon">🎮</div><div class="study-text">L'intersection entre la technologie, le design et la narration (game dev &amp; storytelling)</div></div>
+          <div class="motiv-item"><div class="motiv-icon">🌍</div><div class="study-text">Représenter l'Afrique dans la tech — montrer ce dont les développeurs africains sont capables</div></div>
+          <div class="motiv-item"><div class="motiv-icon">🎵</div><div class="study-text">Fusionner musique et code — produire, automatiser, innover dans le studio</div></div>
+        </div>
+      </div>
+
+      <button class="nav-arrow nav-prev" onclick="goTo(1)">◀ RETOUR</button>
+      <button class="nav-arrow nav-next" onclick="goTo(3)">MES TRAVAUX ▶</button>
+    </div><!-- /s2 -->
+
+
+    <!-- ══ SLIDE 3 — MES TRAVAUX ══ -->
+    <div class="slide" id="s3">
+      <div class="s3-bg"></div>
+      <div class="scanlines"></div>
+
+      <svg class="circuit" viewBox="0 0 220 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 0 L40 120 L80 160 L80 250 L20 310 L20 400 L60 440 L60 550 L30 580 L30 800" stroke="#00e5ff" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="40" cy="120" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="80" cy="250" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="20" cy="400" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+      </svg>
+
+      <div class="slide-header">
+        <div class="section-num">// 03 — PORTFOLIO</div>
+        <div class="section-title">MES <em>TRAVAUX</em></div>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+
+      <!-- Grille verticale scrollable -->
+      <div class="works-container">
+        <div class="works-grid">
+          <!-- Travaux terminés -->
+          <div class="work-icon-card" onclick="openWork('scratch')">
+            <span class="work-status">✓ DONE</span>
+            <div class="work-emoji">🐱</div>
+            <div class="work-label">Scratch Projects</div>
+          </div>
+          <div class="work-icon-card" onclick="openWork('drone')">
+            <span class="work-status">✓ DONE</span>
+            <div class="work-emoji">🚁</div>
+            <div class="work-label">Drone Programming</div>
+          </div>
+          <div class="work-icon-card" onclick="openWork('church')">
+            <span class="work-status">✓ DONE</span>
+            <div class="work-emoji">⛪</div>
+            <div class="work-label">IT Church Bénévolat</div>
+          </div>
+          <div class="work-icon-card locked" onclick="openWork('web')">
+            <span class="work-status">WIP</span>
+            <div class="work-emoji">🌐</div>
+            <div class="work-label">Web Dev Project</div>
+          </div>
+          <!-- En cours -->
+          <div class="work-icon-card locked" onclick="openWork('story')">
+            <span class="work-status">WIP</span>
+            <div class="work-emoji">📖</div>
+            <div class="work-label">Story / Novel</div>
+          </div>
+          <div class="work-icon-card locked" onclick="openWork('studio')">
+            <span class="work-status">WIP</span>
+            <div class="work-emoji">🎵</div>
+            <div class="work-label">Music Studio Setup</div>
+          </div>
+          <div class="work-icon-card locked" onclick="openWork('game')">
+            <span class="work-status">SOON</span>
+            <div class="work-emoji">🎮</div>
+            <div class="work-label">Game Dev Concept</div>
+          </div>
+          <div class="work-icon-card locked" onclick="openWork('app')">
+            <span class="work-status">SOON</span>
+            <div class="work-emoji">📱</div>
+            <div class="work-label">Mobile App</div>
+          </div>
+          <!-- À venir -->
+          <div class="work-icon-card locked" onclick="openWork('ai')">
+            <span class="work-status">SOON</span>
+            <div class="work-emoji">🤖</div>
+            <div class="work-label">AI Project</div>
+          </div>
+          <div class="work-icon-card locked" onclick="openWork('drum')">
+            <span class="work-status">WIP</span>
+            <div class="work-emoji">🥁</div>
+            <div class="work-label">Drum Covers</div>
+          </div>
+          <div class="work-icon-card locked" onclick="openWork('design')">
+            <span class="work-status">SOON</span>
+            <div class="work-emoji">🎨</div>
+            <div class="work-label">UI Design Work</div>
+          </div>
+          <div class="work-icon-card locked" onclick="openWork('open')">
+            <span class="work-status">???</span>
+            <div class="work-emoji">🔮</div>
+            <div class="work-label">Projet Secret</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-arrow nav-prev" onclick="goTo(2)">◀ RETOUR</button>
+    </div><!-- /s3 -->
+
+  </div><!-- /slider -->
+
+
+  <!-- ══ PROGRESS DOTS ══ -->
+  <div class="progress">
+    <div class="prog-dot active" onclick="goTo(0)"></div>
+    <div class="prog-dot"        onclick="goTo(1)"></div>
+    <div class="prog-dot"        onclick="goTo(2)"></div>
+    <div class="prog-dot"        onclick="goTo(3)"></div>
+  </div>
+
+
+  <!-- ══ MODAL TRAVAIL ══ -->
+  <div class="work-modal" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">[ FERMER ]</button>
+      <div class="modal-title" id="modal-title">PROJECT</div>
+      <div class="modal-desc"  id="modal-desc">Description...</div>
+      <div class="modal-tags"  id="modal-tags"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
