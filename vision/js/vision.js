@@ -17,13 +17,13 @@ function navigateTo(url, goBack = false) {
 }
 
 // ── Boutons ──
-document.getElementById('btnPrev').addEventListener('click', () => navigateTo('whoiam.html', true));
-document.getElementById('btnNext').addEventListener('click', () => navigateTo('works.html'));
+document.getElementById('btnPrev').addEventListener('click', () => navigateTo('../whoiam/whoiam.html', true));
+document.getElementById('btnNext').addEventListener('click', () => navigateTo('../works/works.html'));
 
 // ── Clavier ──
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') navigateTo('works.html');
-  if (e.key === 'ArrowLeft')  navigateTo('whoiam.html', true);
+  if (e.key === 'ArrowRight') navigateTo('../works/works.html');
+  if (e.key === 'ArrowLeft')  navigateTo('../whoiam/whoiam.html', true);
 });
 
 // ── Swipe tactile ──

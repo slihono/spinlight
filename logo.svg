@@ -1,0 +1,422 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+    <!-- Fond principal -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#0d0d18"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </radialGradient>
+
+    <!-- Lueur cyan -->
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#00e5ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Lueur rouge -->
+    <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ff2d2d" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ff2d2d" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dégradé texte SL -->
+    <linearGradient id="letterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="50%"  stop-color="#c8d0e0"/>
+      <stop offset="100%" stop-color="#8090a8"/>
+    </linearGradient>
+
+    <!-- Dégradé ligne cyan -->
+    <linearGradient id="lineGradCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#00e5ff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00e5ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filtre flou pour lueurs -->
+    <filter id="blurGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="blurSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="blurTiny" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Masque pour scanlines -->
+    <mask id="scanMask">
+      <rect width="600" height="600" fill="white"/>
+    </mask>
+
+  </defs>
+
+  <!-- ══ FOND ══ -->
+  <rect width="600" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Halo cyan centré -->
+  <ellipse cx="300" cy="300" rx="280" ry="280" fill="url(#cyanGlow)" filter="url(#blurGlow)" opacity="0.6"/>
+  <!-- Halo rouge décalé bas-droite -->
+  <ellipse cx="380" cy="380" rx="200" ry="200" fill="url(#redGlow)" filter="url(#blurGlow)" opacity="0.5"/>
+
+  <!-- ══ HEXAGONE EXTÉRIEUR ══ -->
+  <!-- Ombre hexagone -->
+  <polygon points="300,48 528,174 528,426 300,552 72,426 72,174"
+           fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.08" filter="url(#blurSoft)"/>
+  <!-- Hexagone principal -->
+  <polygon points="300,52 524,178 524,422 300,548 76,422 76,178"
+           fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.35"/>
+  <!-- Hexagone intérieur fin -->
+  <polygon points="300,80 500,195 500,405 300,520 100,405 100,195"
+           fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- ══ COINS HEX — petits détails angulaires ══ -->
+  <!-- Coin haut -->
+  <line x1="284" y1="52" x2="300" y2="52" stroke="#00e5ff" stroke-width="2.5" opacity="0.9" stroke-linecap="round"/>
+  <line x1="300" y1="52" x2="316" y2="52" stroke="#00e5ff" stroke-width="2.5" opacity="0.9" stroke-linecap="round"/>
+  <circle cx="300" cy="52" r="3" fill="#00e5ff" opacity="0.9"/>
+  <!-- Coin bas -->
+  <line x1="284" y1="548" x2="300" y2="548" stroke="#ff2d2d" stroke-width="2.5" opacity="0.9" stroke-linecap="round"/>
+  <line x1="300" y1="548" x2="316" y2="548" stroke="#ff2d2d" stroke-width="2.5" opacity="0.9" stroke-linecap="round"/>
+  <circle cx="300" cy="548" r="3" fill="#ff2d2d" opacity="0.9"/>
+  <!-- Coin haut-droite -->
+  <circle cx="524" cy="178" r="3" fill="#00e5ff" opacity="0.7"/>
+  <line x1="524" y1="162" x2="524" y2="178" stroke="#00e5ff" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+  <!-- Coin bas-droite -->
+  <circle cx="524" cy="422" r="3" fill="#ff2d2d" opacity="0.7"/>
+  <!-- Coin haut-gauche -->
+  <circle cx="76" cy="178" r="3" fill="#00e5ff" opacity="0.7"/>
+  <!-- Coin bas-gauche -->
+  <circle cx="76" cy="422" r="3" fill="#ff2d2d" opacity="0.7"/>
+
+  <!-- ══ CIRCUIT BOARD DÉCORATIF (bas-gauche) ══ -->
+  <!-- Lignes circuit bas gauche -->
+  <g opacity="0.4">
+    <path d="M76 350 L50 350 L50 380 L32 380" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <path d="M76 390 L55 390 L55 420 L40 420" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <path d="M50 350 L50 300 L30 300" fill="none" stroke="#00e5ff" stroke-width="0.8"/>
+    <circle cx="50" cy="350" r="3.5" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <circle cx="50" cy="420" r="3.5" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <circle cx="30" cy="300" r="2.5" fill="#00e5ff"/>
+    <circle cx="32" cy="380" r="2.5" fill="#00e5ff"/>
+    <circle cx="40" cy="420" r="2.5" fill="#00e5ff"/>
+  </g>
+
+  <!-- Circuit haut-droite -->
+  <g opacity="0.4">
+    <path d="M524 230 L550 230 L550 200 L568 200" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <path d="M524 270 L545 270 L545 240 L560 240" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <path d="M550 230 L550 180 L570 180" fill="none" stroke="#00e5ff" stroke-width="0.8"/>
+    <circle cx="550" cy="230" r="3.5" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <circle cx="545" cy="240" r="3.5" fill="none" stroke="#00e5ff" stroke-width="1"/>
+    <circle cx="570" cy="180" r="2.5" fill="#00e5ff"/>
+    <circle cx="568" cy="200" r="2.5" fill="#00e5ff"/>
+    <circle cx="560" cy="240" r="2.5" fill="#00e5ff"/>
+  </g>
+
+  <!-- Circuit bas-droit rouge -->
+  <g opacity="0.35">
+    <path d="M480 548 L480 572 L510 572" fill="none" stroke="#ff2d2d" stroke-width="1"/>
+    <path d="M440 548 L440 565 L460 565 L460 578" fill="none" stroke="#ff2d2d" stroke-width="0.8"/>
+    <circle cx="480" cy="572" r="3" fill="none" stroke="#ff2d2d" stroke-width="1"/>
+    <circle cx="510" cy="572" r="2.5" fill="#ff2d2d"/>
+    <circle cx="460" cy="578" r="2.5" fill="#ff2d2d"/>
+  </g>
+
+  <!-- ══ LIGNES HORIZONTALES (dividers) ══ -->
+  <!-- Ligne cyan haute -->
+  <rect x="120" y="192" width="360" height="1" fill="url(#lineGradCyan)" opacity="0.5"/>
+  <!-- Ligne rouge basse -->
+  <rect x="120" y="408" width="360" height="1" fill="url(#lineGradCyan)" opacity="0.3"/>
+
+  <!-- ══ CERCLE CENTRAL (fond SL) ══ -->
+  <circle cx="300" cy="300" r="165" fill="#08080f" opacity="0.85"/>
+  <circle cx="300" cy="300" r="165" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.2"/>
+  <!-- Halo intérieur -->
+  <circle cx="300" cy="300" r="155" fill="none" stroke="#00e5ff" stroke-width="0.4" opacity="0.12"/>
+
+  <!-- ══ LETTRES "SL" ══ -->
+
+  <!-- Lettre S -->
+  <!-- Ombre/lueur du S -->
+  <text x="175" y="355"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="#00e5ff"
+        opacity="0.08"
+        filter="url(#blurSoft)">S</text>
+  <!-- S principal -->
+  <text x="175" y="355"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="url(#letterGrad)">S</text>
+  <!-- Reflet glitch S (décalé cyan) -->
+  <text x="173" y="353"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="#00e5ff"
+        opacity="0.12"
+        clip-path="inset(30% 0 55% 0)">S</text>
+  <!-- Reflet glitch S (décalé rouge) -->
+  <text x="177" y="357"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="#ff2d2d"
+        opacity="0.1"
+        clip-path="inset(60% 0 15% 0)">S</text>
+
+  <!-- Lettre L -->
+  <!-- Ombre/lueur du L -->
+  <text x="298" y="355"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="#ff2d2d"
+        opacity="0.08"
+        filter="url(#blurSoft)">L</text>
+  <!-- L principal -->
+  <text x="298" y="355"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="url(#letterGrad)">L</text>
+  <!-- Reflet glitch L cyan -->
+  <text x="296" y="353"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="#00e5ff"
+        opacity="0.10"
+        clip-path="inset(15% 0 70% 0)">L</text>
+  <!-- Reflet glitch L rouge -->
+  <text x="300" y="357"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-weight="900"
+        font-size="185"
+        fill="#ff2d2d"
+        opacity="0.10"
+        clip-path="inset(70% 0 10% 0)">L</text>
+
+  <!-- ══ ACCENT BARRE CYAN sous SL ══ -->
+  <rect x="200" y="368" width="195" height="3" rx="1.5" fill="#00e5ff" opacity="0.7"/>
+  <rect x="200" y="368" width="195" height="3" rx="1.5" fill="#00e5ff" opacity="0.4" filter="url(#blurTiny)"/>
+  <!-- Petits segments aux extrémités -->
+  <rect x="200" y="362" width="3" height="15" rx="1.5" fill="#00e5ff" opacity="0.7"/>
+  <rect x="392" y="362" width="3" height="15" rx="1.5" fill="#ff2d2d" opacity="0.7"/>
+
+  <!-- ══ TEXTE "SPINLIGHT" ══ -->
+  <text x="300" y="432"
+        font-family="'Share Tech Mono', 'Courier New', monospace"
+        font-size="22"
+        font-weight="700"
+        fill="#c8d0e0"
+        text-anchor="middle"
+        letter-spacing="10">SPINLIGHT</text>
+  <!-- Lueur texte -->
+  <text x="300" y="432"
+        font-family="'Share Tech Mono', 'Courier New', monospace"
+        font-size="22"
+        font-weight="700"
+        fill="#00e5ff"
+        text-anchor="middle"
+        letter-spacing="10"
+        opacity="0.2"
+        filter="url(#blurTiny)">SPINLIGHT</text>
+
+  <!-- ══ TEXTE TAG "SENEVE LIHONO" (haut) ══ -->
+  <text x="300" y="178"
+        font-family="'Share Tech Mono', 'Courier New', monospace"
+        font-size="11"
+        fill="#5a6070"
+        text-anchor="middle"
+        letter-spacing="4">SENEVE LIHONO</text>
+  <!-- Petits tirets encadrement -->
+  <line x1="145" y1="174" x2="175" y2="174" stroke="#5a6070" stroke-width="0.8" opacity="0.6"/>
+  <line x1="425" y1="174" x2="455" y2="174" stroke="#5a6070" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ══ TAG CODE (bas) ══ -->
+  <text x="300" y="470"
+        font-family="'Share Tech Mono', 'Courier New', monospace"
+        font-size="9"
+        fill="#2a3040"
+        text-anchor="middle"
+        letter-spacing="3">// CS · UA LITTLE ROCK</text>
+
+  <!-- ══ PETITS DÉTAILS DÉCORATIFS ══ -->
+  <!-- Points de données autour du cercle -->
+  <circle cx="300" cy="135" r="2.5" fill="#00e5ff" opacity="0.8"/>
+  <circle cx="300" cy="135" r="5"   fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.4"/>
+
+  <circle cx="300" cy="465" r="2.5" fill="#ff2d2d" opacity="0.8"/>
+  <circle cx="300" cy="465" r="5"   fill="none" stroke="#ff2d2d" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Losanges coins intérieurs -->
+  <!-- haut-gauche -->
+  <polygon points="148,212 156,204 164,212 156,220" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.5"/>
+  <!-- haut-droit -->
+  <polygon points="436,212 444,204 452,212 444,220" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.5"/>
+  <!-- bas-gauche -->
+  <polygon points="148,388 156,380 164,388 156,396" fill="none" stroke="#ff2d2d" stroke-width="0.8" opacity="0.5"/>
+  <!-- bas-droit -->
+  <polygon points="436,388 444,380 452,388 444,396" fill="none" stroke="#ff2d2d" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Scanlines subtiles (bandes horizontales) -->
+  <rect width="600" height="600" fill="url(#bgGrad)" opacity="0" mask="url(#scanMask)"/>
+  <g opacity="0.025">
+    <rect x="0" y="0"   width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="4"   width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="8"   width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="12"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="16"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="20"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="24"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="28"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="32"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="36"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="40"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="44"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="48"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="52"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="56"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="60"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="64"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="68"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="72"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="76"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="80"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="84"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="88"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="92"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="96"  width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="100" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="104" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="108" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="112" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="116" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="120" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="124" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="128" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="132" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="136" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="140" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="144" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="148" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="152" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="156" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="160" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="164" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="168" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="172" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="176" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="180" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="184" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="188" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="192" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="196" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="200" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="204" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="208" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="212" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="216" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="220" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="224" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="228" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="232" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="236" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="240" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="244" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="248" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="252" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="256" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="260" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="264" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="268" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="272" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="276" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="280" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="284" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="288" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="292" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="296" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="300" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="304" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="308" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="312" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="316" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="320" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="324" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="328" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="332" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="336" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="340" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="344" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="348" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="352" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="356" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="360" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="364" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="368" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="372" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="376" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="380" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="384" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="388" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="392" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="396" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="400" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="404" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="408" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="412" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="416" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="420" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="424" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="428" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="432" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="436" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="440" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="444" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="448" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="452" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="456" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="460" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="464" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="468" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="472" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="476" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="480" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="484" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="488" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="492" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="496" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="500" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="504" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="508" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="512" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="516" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="520" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="524" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="528" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="532" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="536" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="540" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="544" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="548" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="552" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="556" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="560" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="564" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="568" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="572" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="576" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="580" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="584" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="588" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="592" width="600" height="1" fill="#00e5ff"/>
+    <rect x="0" y="596" width="600" height="1" fill="#00e5ff"/>
+  </g>
+
+</svg>
