@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seneve Lihono — Travaux</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="works.css">
+</head>
+<body>
+
+  <div class="page" id="page">
+
+    <!-- Fond -->
+    <div class="s3-bg"></div>
+    <div class="scanlines"></div>
+
+    <!-- Circuit board cyan -->
+    <svg class="circuit" viewBox="0 0 220 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 0 L40 120 L80 160 L80 250 L20 310 L20 400 L60 440 L60 550 L30 580 L30 800"
+            stroke="#00e5ff" stroke-width="1.5" opacity="0.4"/>
+      <circle cx="40" cy="120" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="80" cy="250" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="20" cy="400" r="5" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.7"/>
+      <path d="M40 120 L10 120"  stroke="#00e5ff" stroke-width="1" opacity="0.4"/>
+      <path d="M80 250 L120 250" stroke="#00e5ff" stroke-width="1" opacity="0.4"/>
+    </svg>
+
+    <!-- En-tête -->
+    <div class="slide-header">
+      <div class="section-num">// 03 — PORTFOLIO</div>
+      <div class="section-title">MES <em>TRAVAUX</em></div>
+      <div class="title-bar"></div>
+    </div>
+
+    <!-- Hint scroll vertical -->
+    <div class="scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <!-- Grille scrollable verticalement -->
+    <div class="works-container">
+      <div class="works-grid">
+
+        <!-- ✓ Terminés (cyan) -->
+        <div class="work-icon-card" data-key="scratch">
+          <span class="work-status">✓ DONE</span>
+          <div class="work-emoji">🐱</div>
+          <div class="work-label">Scratch Projects</div>
+        </div>
+
+        <div class="work-icon-card" data-key="drone">
+          <span class="work-status">✓ DONE</span>
+          <div class="work-emoji">🚁</div>
+          <div class="work-label">Drone Programming</div>
+        </div>
+
+        <div class="work-icon-card" data-key="church">
+          <span class="work-status">✓ DONE</span>
+          <div class="work-emoji">⛪</div>
+          <div class="work-label">IT Church Bénévolat</div>
+        </div>
+
+        <!-- 🔴 En cours (rouge) -->
+        <div class="work-icon-card locked" data-key="web">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🌐</div>
+          <div class="work-label">Web Dev Project</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="story">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">📖</div>
+          <div class="work-label">Story / Novel</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="studio">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🎵</div>
+          <div class="work-label">Music Studio Setup</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="drum">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🥁</div>
+          <div class="work-label">Drum Covers</div>
+        </div>
+
+        <!-- 🔴 À venir (rouge) -->
+        <div class="work-icon-card locked" data-key="game">
+          <span class="work-status">SOON</span>
+          <div class="work-emoji">🎮</div>
+          <div class="work-label">Game Dev Concept</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="app">
+          <span class="work-status">SOON</span>
+          <div class="work-emoji">📱</div>
+          <div class="work-label">Mobile App</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="ai">
+          <span class="work-status">SOON</span>
+          <div class="work-emoji">🤖</div>
+          <div class="work-label">AI Project</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="design">
+          <span class="work-status">SOON</span>
+          <div class="work-emoji">🎨</div>
+          <div class="work-label">UI Design Work</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="open">
+          <span class="work-status">???</span>
+          <div class="work-emoji">🔮</div>
+          <div class="work-label">Projet Secret</div>
+        </div>
+
+      </div><!-- /works-grid -->
+    </div><!-- /works-container -->
+
+    <!-- Navigation -->
+    <button class="nav-arrow nav-prev" id="btnPrev">◀ RETOUR</button>
+
+  </div><!-- /page -->
+
+  <!-- Points de progression -->
+  <div class="progress">
+    <a class="prog-dot" href="index.html"></a>
+    <a class="prog-dot" href="whoiam.html"></a>
+    <a class="prog-dot" href="vision.html"></a>
+    <span class="prog-dot active"></span>
+  </div>
+
+  <!-- Modal détail travail -->
+  <div class="work-modal" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">[ FERMER ]</button>
+      <div class="modal-title" id="modal-title">PROJECT</div>
+      <div class="modal-desc"  id="modal-desc">Description...</div>
+      <div class="modal-tags"  id="modal-tags"></div>
+    </div>
+  </div>
+
+  <script src="works.js"></script>
+</body>
+</html>

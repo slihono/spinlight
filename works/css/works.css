@@ -1,0 +1,239 @@
+/* ══════════════════════════════════════════════
+   works.css — Page MES TRAVAUX
+══════════════════════════════════════════════ */
+
+/* ── Fond ── */
+.s3-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(0, 229, 255, 0.05) 0%, transparent 60%),
+    #060608;
+}
+
+/* ── Conteneur scrollable vertical ── */
+.works-container {
+  position: absolute;
+  top: 26%;
+  left: 6%;
+  right: 6%;
+  bottom: 12%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 5;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cyan) transparent;
+}
+
+.works-container::-webkit-scrollbar       { width: 3px; }
+.works-container::-webkit-scrollbar-track { background: transparent; }
+.works-container::-webkit-scrollbar-thumb { background: var(--cyan); }
+
+/* ── Grille 4 colonnes ── */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  padding-bottom: 1rem;
+}
+
+/* ── Carte travail (cyan) ── */
+.work-icon-card {
+  aspect-ratio: 1;
+  border: 1px solid rgba(0, 229, 255, 0.12);
+  background: rgba(0, 229, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  animation: fadeUp 0.4s ease both;
+}
+
+.work-icon-card:nth-child(1)  { animation-delay: 0.00s; }
+.work-icon-card:nth-child(2)  { animation-delay: 0.05s; }
+.work-icon-card:nth-child(3)  { animation-delay: 0.10s; }
+.work-icon-card:nth-child(4)  { animation-delay: 0.15s; }
+.work-icon-card:nth-child(5)  { animation-delay: 0.20s; }
+.work-icon-card:nth-child(6)  { animation-delay: 0.25s; }
+.work-icon-card:nth-child(7)  { animation-delay: 0.30s; }
+.work-icon-card:nth-child(8)  { animation-delay: 0.35s; }
+.work-icon-card:nth-child(9)  { animation-delay: 0.40s; }
+.work-icon-card:nth-child(10) { animation-delay: 0.45s; }
+.work-icon-card:nth-child(11) { animation-delay: 0.50s; }
+.work-icon-card:nth-child(12) { animation-delay: 0.55s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.work-icon-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.work-icon-card:hover::before { opacity: 1; }
+
+.work-icon-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15), inset 0 0 20px rgba(0, 229, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ── Variante rouge (locked / WIP / SOON) ── */
+.work-icon-card.locked {
+  border-color: rgba(255, 45, 45, 0.12);
+  background: rgba(255, 45, 45, 0.03);
+}
+
+.work-icon-card.locked:hover {
+  border-color: var(--red);
+  box-shadow: 0 0 20px rgba(255, 45, 45, 0.15);
+}
+
+/* ── Éléments intérieurs ── */
+.work-emoji {
+  font-size: 2rem;
+  filter: grayscale(0.3);
+}
+
+.work-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0.3rem;
+  transition: color 0.3s;
+}
+
+.work-icon-card:hover .work-label        { color: var(--cyan); }
+.work-icon-card.locked:hover .work-label { color: var(--red); }
+
+.work-status {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.45rem;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+}
+
+.work-icon-card.locked .work-status { color: var(--red); }
+
+/* ── Hint de défilement ── */
+.scroll-hint {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.scroll-hint span {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: var(--cyan);
+  writing-mode: vertical-rl;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(180deg, var(--cyan), transparent);
+  animation: scroll-anim 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-anim {
+  0%, 100% { transform: scaleY(1);                    opacity: 0.4; }
+  50%       { transform: scaleY(0.3) translateY(20px); opacity: 0.1; }
+}
+
+/* ══════════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════════ */
+.work-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.work-modal.open { display: flex; }
+
+.modal-box {
+  background: var(--mid);
+  border: 1px solid var(--cyan);
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.modal-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text);
+  font-weight: 300;
+  white-space: pre-line;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: var(--dim);
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  transition: color 0.2s;
+}
+
+.modal-close:hover { color: var(--cyan); }
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}

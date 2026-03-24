@@ -1,0 +1,228 @@
+/* ══════════════════════════════════════════════
+   shared.css — Styles communs à toutes les pages
+   Importer en PREMIER dans chaque page HTML
+══════════════════════════════════════════════ */
+
+/* ── Variables globales ── */
+:root {
+  --cyan:  #00e5ff;
+  --red:   #ff2d2d;
+  --dark:  #050508;
+  --mid:   #0d0d14;
+  --panel: #0a0a12;
+  --text:  #c8d0e0;
+  --dim:   #5a6070;
+  --transition-speed: 0.9s;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  cursor: default;
+}
+
+/* ── Texture grain (noise overlay) ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Conteneur de page (chaque page est un plein écran) ── */
+.page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Animation entrée / sortie de page ── */
+.page-enter {
+  animation: slideInRight 0.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+.page-exit {
+  animation: slideOutLeft 0.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+.page-enter-back {
+  animation: slideInLeft 0.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+.page-exit-back {
+  animation: slideOutRight 0.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+@keyframes slideInRight  { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes slideOutLeft  { from { transform: translateX(0); }    to { transform: translateX(-100%); } }
+@keyframes slideInLeft   { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes slideOutRight { from { transform: translateX(0); }    to { transform: translateX(100%); } }
+
+/* ── Lignes de scan CRT ── */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 229, 255, 0.015) 2px,
+    rgba(0, 229, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Circuit board décoratif (SVG latéral) ── */
+.circuit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── En-tête de section ── */
+.slide-header {
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  z-index: 5;
+}
+
+.section-num {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--red);
+  letter-spacing: 0.4em;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #fff;
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+}
+
+.section-title em {
+  color: var(--cyan);
+  font-style: normal;
+}
+
+.title-bar {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--cyan));
+  margin-top: 0.8rem;
+}
+
+/* ── Tags ── */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.tag {
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: var(--cyan);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.tag.red {
+  background: rgba(255, 45, 45, 0.08);
+  border-color: rgba(255, 45, 45, 0.2);
+  color: var(--red);
+}
+
+/* ── Boutons de navigation (flèches) ── */
+.nav-arrow {
+  position: absolute;
+  bottom: 8%;
+  z-index: 10;
+  background: transparent;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: var(--cyan);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  text-decoration: none;
+}
+
+.nav-arrow:hover {
+  background: rgba(0, 229, 255, 0.1);
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.nav-next { right: 6%; }
+
+.nav-prev {
+  left: 6%;
+  border-color: rgba(255, 45, 45, 0.3);
+  color: var(--red);
+}
+.nav-prev:hover {
+  background: rgba(255, 45, 45, 0.1);
+  border-color: var(--red);
+  box-shadow: 0 0 20px rgba(255, 45, 45, 0.2);
+}
+
+/* ── Points de progression (bas de page) ── */
+.progress {
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 20;
+}
+
+.prog-dot {
+  width: 24px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.4s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.prog-dot.active {
+  background: var(--cyan);
+  width: 40px;
+  box-shadow: 0 0 8px var(--cyan);
+}
