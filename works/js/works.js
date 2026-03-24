@@ -89,11 +89,11 @@ function navigateTo(url, goBack = false) {
 }
 
 // Bouton retour
-document.getElementById('btnPrev').addEventListener('click', () => navigateTo('vision.html', true));
+document.getElementById('btnPrev').addEventListener('click', () => navigateTo('../vision/vision.html', true));
 
 // Clavier
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft') navigateTo('vision.html', true);
+  if (e.key === 'ArrowLeft') navigateTo('../vision/vision.html', true);
   if (e.key === 'Escape')    closeModal();
 });
 
@@ -102,7 +102,7 @@ let startX = 0;
 document.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
 document.addEventListener('touchend', e => {
   const dx = e.changedTouches[0].clientX - startX;
-  if (dx > 60) navigateTo('vision.html', true);
+  if (dx > 60) navigateTo('../vision/vision.html', true);
 });
 
 
