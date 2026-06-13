@@ -35,35 +35,81 @@
     </svg>
 
     <!-- Personnage sombre (SVG art) -->
-    <div class="dark-figure">
-      <svg class="figure-svg" viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"   stop-color="#ff3300" stop-opacity="1"/>
-            <stop offset="60%"  stop-color="#cc1100" stop-opacity="0.8"/>
-            <stop offset="100%" stop-color="#660000" stop-opacity="0"/>
-          </radialGradient>
-          <filter id="blur-eye">  <feGaussianBlur stdDeviation="4"/>  </filter>
-          <filter id="blur-soft"> <feGaussianBlur stdDeviation="12"/> </filter>
-        </defs>
-        <ellipse cx="250" cy="600" rx="180" ry="120" fill="#080810" opacity="0.9"/>
-        <path d="M140 300 Q120 400 100 550 Q130 620 250 650 Q370 620 400 550 Q380 400 360 300 Q320 280 250 275 Q180 280 140 300Z" fill="#0a0810" opacity="0.95"/>
-        <path d="M165 180 Q150 150 160 120 Q170 70 250 60 Q330 70 340 120 Q350 150 335 180 Q330 240 320 270 Q290 285 250 285 Q210 285 180 270 Q170 240 165 180Z" fill="#0d0a14"/>
-        <path d="M165 180 Q140 160 125 130 Q115 100 130 75 Q110 90 115 120 Q100 110 108 80 Q95 100 105 135 Q90 125 100 150 Q85 140 98 165 Q80 158 95 180 Q165 180 165 180Z" fill="#111118" opacity="0.9"/>
-        <path d="M335 180 Q360 160 375 130 Q385 100 370 75 Q390 90 385 120 Q400 110 392 80 Q405 100 395 135 Q410 125 402 150 Q415 140 402 165 Q420 158 405 180 Q335 180 335 180Z" fill="#111118" opacity="0.9"/>
-        <path d="M185 75 Q200 40 250 35 Q300 40 315 75 Q310 45 295 30 Q270 15 230 20 Q205 25 185 75Z" fill="#0d0a14"/>
-        <path d="M185 150 Q190 200 200 240 Q220 270 250 272 Q280 270 300 240 Q310 200 315 150 Q295 135 250 133 Q205 135 185 150Z" fill="#0c0a12"/>
-        <ellipse cx="207" cy="185" rx="20" ry="12" fill="url(#eyeGlow)" filter="url(#blur-eye)" opacity="0.9"/>
-        <ellipse cx="293" cy="185" rx="20" ry="12" fill="url(#eyeGlow)" filter="url(#blur-eye)" opacity="0.9"/>
-        <ellipse cx="207" cy="185" rx="8"  ry="6"  fill="#ff2200"/>
-        <ellipse cx="293" cy="185" rx="8"  ry="6"  fill="#ff2200"/>
-        <ellipse cx="207" cy="185" rx="3"  ry="3"  fill="#fff" opacity="0.6"/>
-        <ellipse cx="293" cy="185" rx="3"  ry="3"  fill="#fff" opacity="0.6"/>
-        <ellipse cx="250" cy="185" rx="120" ry="60" fill="#ff1100" opacity="0.05" filter="url(#blur-soft)"/>
-        <path d="M220 272 Q235 290 250 295 Q265 290 280 272 Q265 285 250 288 Q235 285 220 272Z" fill="#0a0810"/>
-      </svg>
-    </div>
+<div class="dark-figure">
+  <svg class="figure-svg" viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Dégradé pour les pétales (noir pur) -->
+      <radialGradient id="blackPetalGradient" cx="50%" cy="50%" r="70%">
+        <stop offset="0%" stop-color="#000000" />
+        <stop offset="100%" stop-color="#000000" />
+      </radialGradient>
 
+      <!-- Lueur très subtile pour les bords (gris foncé) -->
+      <radialGradient id="petalGlow" cx="50%" cy="50%" r="70%">
+        <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.8" />
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.2" />
+      </radialGradient>
+
+      <!-- Dégradé pour les feuilles (noir) -->
+      <linearGradient id="blackLeafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#000000" />
+        <stop offset="100%" stop-color="#000000" />
+      </linearGradient>
+
+      <!-- Filtre pour un effet de lueur très discrète -->
+      <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="2" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+
+    <!-- Tige noire avec épines (inchangée) -->
+    <path d="M250 600 L250 200" stroke="#000000" stroke-width="12" stroke-linecap="round" />
+    <path d="M250 300 L245 290" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" />
+    <path d="M250 400 L255 390" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" />
+    <path d="M250 500 L245 490" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" />
+    <path d="M250 550 L255 540" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Feuilles noires (inchangées) -->
+    <path d="M250 350 Q180 250 160 300 Q200 330 250 320 Q300 330 340 300 Q320 250 250 350"
+          fill="url(#blackLeafGradient)" stroke="#1a1a1a" stroke-width="1" />
+    <path d="M250 450 Q180 350 160 400 Q200 430 250 420 Q300 430 340 400 Q320 350 250 450"
+          fill="url(#blackLeafGradient)" stroke="#1a1a1a" stroke-width="1" />
+    <path d="M250 500 Q270 450 220 430 Q200 400 250 480"
+          fill="url(#blackLeafGradient)" stroke="#1a1a1a" stroke-width="1" />
+
+    <!-- Pétales de la rose noire (forme gothique et anguleuse) -->
+    <!-- Pétale central -->
+    <path d="M250 180 L220 120 L200 150 L220 180 L250 200 L280 180 L300 150 L280 120 Z"
+          fill="url(#blackPetalGradient)" filter="url(#subtleGlow)" />
+
+    <!-- Pétales supérieurs -->
+    <path d="M250 180 L200 100 L180 140 L200 170 L250 190 L300 170 L320 140 L300 100 Z"
+          fill="url(#blackPetalGradient)" transform="rotate(0 250 180)" />
+    <path d="M250 180 L200 100 L180 140 L200 170 L250 190 L300 170 L320 140 L300 100 Z"
+          fill="url(#blackPetalGradient)" transform="rotate(45 250 180)" />
+    <path d="M250 180 L200 100 L180 140 L200 170 L250 190 L300 170 L320 140 L300 100 Z"
+          fill="url(#blackPetalGradient)" transform="rotate(-45 250 180)" />
+
+    <!-- Pétales inférieurs -->
+    <path d="M250 220 L200 280 L180 250 L200 230 L250 210 L300 230 L320 250 L300 280 Z"
+          fill="url(#blackPetalGradient)" transform="rotate(0 250 220)" />
+    <path d="M250 220 L200 280 L180 250 L200 230 L250 210 L300 230 L320 250 L300 280 Z"
+          fill="url(#blackPetalGradient)" transform="rotate(30 250 220)" />
+    <path d="M250 220 L200 280 L180 250 L200 230 L250 210 L300 230 L320 250 L300 280 Z"
+          fill="url(#blackPetalGradient)" transform="rotate(-30 250 220)" />
+
+    <!-- Bords des pétales (lueur très subtile) -->
+    <path d="M250 180 L220 120 L200 150 L220 180 L250 200 L280 180 L300 150 L280 120 Z"
+          fill="none" stroke="url(#petalGlow)" stroke-width="1" />
+    <path d="M250 220 L200 280 L180 250 L200 230 L250 210 L300 230 L320 250 L300 280 Z"
+          fill="none" stroke="url(#petalGlow)" stroke-width="1" />
+
+    <!-- Centre de la rose (noir) -->
+    <circle cx="250" cy="200" r="20" fill="#000000" />
+    <circle cx="250" cy="200" r="10" fill="#1a1a1a" />
+  </svg>
+</div>
     <!-- Contenu texte gauche -->
     <div class="s0-left">
       <div class="tag-line"> SYSTEM_INIT — UA LITTLE ROCK / CS </div>
