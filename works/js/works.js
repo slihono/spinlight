@@ -118,12 +118,27 @@ function openWork(key) {
     .map(t => `<span class="tag${w.red ? ' red' : ''}">${t}</span>`)
     .join('');
 
+  const linkEl = document.getElementById('modal-link');
+
+  if (w.link) {
+    linkEl.innerHTML = `
+      <button id="modal-open-work">Voir le projet</button>
+    `;
+    document.getElementById('modal-open-work').onclick = () => {
+      navigateTo(w.link);
+    };
+  } else {
+    linkEl.innerHTML = '';
+  }
+
   document.getElementById('modal').classList.add('open');
+
+
  const linkEl = document.getElementById('modal-link');
 
 if (w.link) {
   linkEl.innerHTML = `
-    <a href="${w.link}" target="_blank" rel="noopener noreferrer">
+    <a href="${w.link}" rel="noopener noreferrer">
       see more
     </a>
   `;
