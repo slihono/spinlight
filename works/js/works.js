@@ -138,22 +138,6 @@ function openWork(key) {
   }
 
   document.getElementById('modal').classList.add('open');
-
-
- const linkEl = document.getElementById('modal-link');
-
-if (w.link) {
-  linkEl.innerHTML = `
-    <a href="${w.link}" rel="noopener noreferrer">
-      see more
-    </a>
-  `;
-  linkEl.style.display = 'block';
-} else {
-  linkEl.innerHTML = '';
-  linkEl.style.display = 'none';
-}
- 
 }
 
 function closeModal() {
