@@ -8,7 +8,8 @@ const WORKS = {
     title: 'SCRATCH PROJECTS',
     desc:  'Premier contact avec la programmation via Scratch. Création de petits jeux, animations et interactions. Ce fut le déclencheur de la passion pour le code.',
     tags:  ['Scratch', 'Logique', 'Animation', 'Game Design'],
-    red:   false
+    red:   false,
+    link:  '../works/projects/scratch.html'
   },
   drone: {
     title: 'DRONE PROGRAMMING',
@@ -116,6 +117,11 @@ function openWork(key) {
   document.getElementById('modal-tags').innerHTML    = w.tags
     .map(t => `<span class="tag${w.red ? ' red' : ''}">${t}</span>`)
     .join('');
+  document.getElementById('modal-link').innerHTML = `
+  <a href="${w.link}" target="_blank" rel="noopener noreferrer">
+    Voir le projet
+  </a>
+`;
 
   document.getElementById('modal').classList.add('open');
 }
@@ -139,3 +145,6 @@ document.querySelectorAll('.work-icon-card').forEach(card => {
 
 /* ── Animation d'entrée ── */
 document.getElementById('page').classList.add('page-enter');
+
+
+

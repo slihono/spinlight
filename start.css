@@ -8,8 +8,8 @@
   inset: 0;
   background:
     radial-gradient(ellipse 60% 80% at 75% 50%, #1a0505 0%, transparent 65%),
-    radial-gradient(ellipse 30% 40% at 72% 48%, rgba(180, 20, 20, 0.25) 0%, transparent 60%),
-    linear-gradient(135deg, #050508 0%, #0a0310 100%);
+    radial-gradient(ellipse 300% 40% at 72% 48%, rgba(180, 20, 20, 0.25) 0%, transparent 60%),
+    linear-gradient(125deg, #050508 0%, #0a0310 100%);
 }
 
 /* ── Personnage sombre droite ── */
