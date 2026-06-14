@@ -9,7 +9,7 @@ const WORKS = {
     desc:  'First contact with programming through Scratch. Creating small games, animations, and interactions. It was the trigger for my passion for coding.',
     tags:  ['Scratch', 'Logique', 'Animation', 'Game Design'],
     red:   false,
-    link:  '../works/projects/scratch.html'
+    link:  '../projects/scratch.html'
   },
   drone: {
     title: 'DRONE PROGRAMMING',
