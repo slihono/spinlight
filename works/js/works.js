@@ -6,75 +6,75 @@
 const WORKS = {
   scratch: {
     title: 'SCRATCH PROJECTS',
-    desc:  'Premier contact avec la programmation via Scratch. Création de petits jeux, animations et interactions. Ce fut le déclencheur de la passion pour le code.',
+    desc:  'First contact with programming through Scratch. Creating small games, animations, and interactions. It was the trigger for my passion for coding.',
     tags:  ['Scratch', 'Logique', 'Animation', 'Game Design'],
     red:   false,
     link:  '../works/projects/scratch.html'
   },
   drone: {
     title: 'DRONE PROGRAMMING',
-    desc:  "Formation de un mois en programmation de drones. Apprentissage des bases du contrôle de vol automatisé et des algorithmes de trajectoire.",
+    desc:  "One-month training in drone programming. Learning the basics of automated flight control on DroneBlocks.",
     tags:  ['Python', 'Robotique', 'Algorithmes', 'Drone'],
     red:   false
   },
   church: {
     title: 'IT BÉNÉVOLAT — SUMMIT CHURCH',
-    desc:  "Bénévolat dans les services IT du Summit Church. Gestion des équipements audio/vidéo, support technique et maintenance du réseau.",
-    tags:  ['IT Support', 'Réseaux', 'AV Tech', 'Bénévolat'],
+    desc:  "Volunteering in the IT services at Summit Church. Managing electronic equipment, technical support, and network maintenance.",
+    tags:  ['IT Support', 'Networking', 'Volunteering'],
     red:   false
   },
   web: {
     title: 'WEB DEV PROJECT',
-    desc:  "Projet web en cours de développement. Apprentissage du HTML, CSS et JavaScript pour construire des interfaces web modernes.",
-    tags:  ['HTML', 'CSS', 'JavaScript', 'En cours'],
+    desc:  "Web development project in progress. Learning HTML, CSS, and JavaScript to build modern web interfaces.",
+    tags:  ['HTML', 'CSS', 'JavaScript', 'Eprocessing'],
     red:   true
   },
   story: {
     title: 'STORY / NOVEL',
-    desc:  "Rédaction d'une histoire originale. Seneve travaille sur un projet narratif ambitieux entre manga et roman.",
-    tags:  ['Écriture', 'Narration', 'Fiction', 'En cours'],
+    desc:  "Writing an original story. Seneve is working on an ambitious narrative project between manga and novel.",
+    tags:  ['writing', 'Narration', 'Fiction', 'processing'],
     red:   true
   },
   studio: {
     title: 'HOME MUSIC STUDIO',
-    desc:  "Mise en place d'un studio de musique dans sa chambre. Production musicale et enregistrement de sessions de batterie.",
-    tags:  ['Batterie', 'Production', 'Studio', 'En cours'],
+    desc:  "Setting up a home music studio. Creating a space for musical production and recording sessions.",
+    tags:  ['Drum', 'Production', 'Studio', 'Processing'],
     red:   true
   },
   drum: {
     title: 'DRUM COVERS',
-    desc:  "Sessions de batterie enregistrées. Covers de morceaux favoris et compositions originales en développement.",
-    tags:  ['Batterie', 'Musique', 'Performance', 'En cours'],
+    desc:  "Recording drum covers of favorite songs and original compositions.",
+    tags:  ['Drum', 'Music', 'Performance'],
     red:   true
   },
   game: {
     title: 'GAME DEV CONCEPT',
-    desc:  "Concept de jeu vidéo en développement. Projet personnel inspiré des animes et de l'univers dark fantasy.",
+    desc:  "Concept for a video game in development. A personal project inspired by anime and dark fantasy universes.",
     tags:  ['Game Design', 'Concept Art', 'Narrative', 'Soon'],
     red:   true
   },
   app: {
     title: 'MOBILE APP',
-    desc:  "Projet d'application mobile. Idée en cours de maturation pour résoudre un problème du quotidien.",
-    tags:  ['Mobile', 'UI/UX', 'Développement', 'Soon'],
+    desc:  "A mobile application project. An idea in the making to solve a daily problem.",
+    tags:  ['Mobile', 'UI/UX', 'Développement'],
     red:   true
   },
   ai: {
     title: 'AI PROJECT',
-    desc:  "Exploration des possibilités de l'Intelligence Artificielle. Projet futur combinant IA et créativité.",
-    tags:  ['IA', 'Machine Learning', 'Créativité', 'Soon'],
+    desc:  "Exploring the possibilities of Artificial Intelligence. A future project combining AI and creativity.",
+    tags:  ['IA', 'Machine Learning', 'Créativity', 'Soon'],
     red:   true
   },
   design: {
     title: 'UI DESIGN WORK',
-    desc:  "Projets de design d'interface. Exploration de l'esthétique dark cyberpunk et anime.",
-    tags:  ['UI/UX', 'Figma', 'Design System', 'Soon'],
+    desc:  "Projects for user interface design. Exploring the aesthetics of dark cyberpunk and anime.",
+    tags:  ['UI/UX', 'Figma', 'Design System'],
     red:   true
   },
   open: {
-    title: '??? — PROJET SECRET',
-    desc:  '[ ACCÈS REFUSÉ ]\n\nDes informations seront révélées en temps voulu. Stay tuned.',
-    tags:  ['Classifié', '???', 'Bientôt'],
+    title: '??? —  SECRET PROJECT',
+    desc:  'A secret project that will be revealed soon.',
+    tags:  ['Classified', '???', 'soon'],
     red:   true
   }
 };
@@ -117,13 +117,22 @@ function openWork(key) {
   document.getElementById('modal-tags').innerHTML    = w.tags
     .map(t => `<span class="tag${w.red ? ' red' : ''}">${t}</span>`)
     .join('');
-  document.getElementById('modal-link').innerHTML = `
-  <a href="${w.link}" target="_blank" rel="noopener noreferrer">
-    Voir le projet
-  </a>
-`;
 
   document.getElementById('modal').classList.add('open');
+ const linkEl = document.getElementById('modal-link');
+
+if (w.link) {
+  linkEl.innerHTML = `
+    <a href="${w.link}" target="_blank" rel="noopener noreferrer">
+      see more
+    </a>
+  `;
+  linkEl.style.display = 'block';
+} else {
+  linkEl.innerHTML = '';
+  linkEl.style.display = 'none';
+}
+ 
 }
 
 function closeModal() {

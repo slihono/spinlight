@@ -6,8 +6,14 @@
  * Navigue vers la page suivante avec une animation de glissement.
  * @param {string} url - URL de la page cible
  */
+let isNavigating = false;
+
 function navigateTo(url) {
+  if (isNavigating) return;
+  isNavigating = true;
+
   const page = document.getElementById('page');
+  page.classList.remove('page-enter', 'page-enter-back', 'page-exit', 'page-exit-back');
   page.classList.add('page-exit');
 
   // Attend la fin de l'animation avant de changer de page

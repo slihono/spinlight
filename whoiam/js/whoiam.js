@@ -7,8 +7,14 @@
  * @param {string} url      - URL cible
  * @param {boolean} goBack  - true = animation vers la droite (retour)
  */
+let isNavigating = false;
+
 function navigateTo(url, goBack = false) {
+  if (isNavigating) return;
+  isNavigating = true;
+
   const page = document.getElementById('page');
+  page.classList.remove('page-enter', 'page-enter-back', 'page-exit', 'page-exit-back');
   page.classList.add(goBack ? 'page-exit-back' : 'page-exit');
 
   page.addEventListener('animationend', () => {
