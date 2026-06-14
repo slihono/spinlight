@@ -80,9 +80,16 @@
   background: linear-gradient(135deg, rgba(0, 229, 255, 0.08), transparent);
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .work-icon-card:hover::before { opacity: 1; }
+
+.work-icon-card > * {
+  position: relative;
+  z-index: 1;
+}
 
 .work-icon-card:hover {
   border-color: var(--cyan);

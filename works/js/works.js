@@ -81,8 +81,14 @@ const WORKS = {
 
 
 /* ── Navigation entre pages ── */
+let isNavigating = false;
+
 function navigateTo(url, goBack = false) {
+  if (isNavigating) return;
+  isNavigating = true;
+
   const page = document.getElementById('page');
+  page.classList.remove('page-enter', 'page-enter-back', 'page-exit', 'page-exit-back');
   page.classList.add(goBack ? 'page-exit-back' : 'page-exit');
   page.addEventListener('animationend', () => {
     window.location.href = url;
