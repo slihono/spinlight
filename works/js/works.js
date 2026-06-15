@@ -128,7 +128,7 @@ function openWork(key) {
 
   if (w.link) {
     linkEl.innerHTML = `
-      <button id="modal-open-work">Voir le projet</button>
+      <button id="modal-open-work">See Project</button>
     `;
     document.getElementById('modal-open-work').onclick = () => {
       navigateTo(w.link);
