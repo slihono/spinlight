@@ -238,6 +238,25 @@
 
 .modal-close:hover { color: var(--cyan); }
 
+#modal-open-work {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.9rem 1.3rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--cyan);
+  color: var(--dark);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+#modal-open-work:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
 .modal-tags {
   display: flex;
   flex-wrap: wrap;
