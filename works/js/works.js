@@ -17,6 +17,13 @@ const WORKS = {
     tags:  ['Python', 'Robotique', 'Algorithmes', 'Drone'],
     red:   false
   },
+  research: {
+    title: 'ARKANSAS SUMMER RESEARCH INSTITUTE',
+    desc:  "Participating in a summer research program in Arkansas. Conducting experiments and analyzing data in Population Health.",
+    tags:  ['Research', 'Science', 'Collaboration', 'Data Analysis'],
+    red:   false,
+    link:  'https://docs.google.com/presentation/d/1m3gD2zOgRm54PN2K_Xm9OJNN1ul6DusjYakiMUJzd_8/edit?usp=sharing'
+  },
   church: {
     title: 'IT BÉNÉVOLAT — SUMMIT CHURCH',
     desc:  "Volunteering in the IT services at Summit Church. Managing electronic equipment, technical support, and network maintenance.",
