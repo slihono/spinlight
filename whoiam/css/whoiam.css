@@ -66,3 +66,59 @@
   color: var(--text);
   font-weight: 300;
 }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE DESIGN — MOBILE & TABLETTE
+══════════════════════════════════════════════ */
+
+/* --- Mobile (< 768px) --- */
+@media (max-width: 767px) {
+  
+  /* Layouts fluides */
+  .works-container, .bio-grid, .two-col {
+    top: 18%;
+    left: 4%;
+    right: 4%;
+    bottom: 80px; /* Espace pour la navigation du bas */
+  }
+
+  /* Modification des grilles */
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
+    gap: 0.8rem;
+  }
+
+  .bio-grid, .two-col {
+    grid-template-columns: 1fr; /* 1 seule colonne */
+    gap: 1.2rem;
+  }
+
+  /* Masquer le hint de scroll latéral */
+  .scroll-hint {
+    display: none;
+  }
+
+  /* Ajustement de la modale */
+  .modal-box {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  /* Ajustement iFrame Scratch */
+  iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* --- Tablette (768px – 1024px) --- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .works-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne */
+  }
+
+  .two-col, .bio-grid {
+    gap: 1.5rem;
+  }
+}
