@@ -186,3 +186,18 @@
 .works-container::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.02);
 }
+/* ── Adaptation Mobile & Scroll interne ── */
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr; /* Empile "What I Study" et "My Motivation" */
+    top: 20%;
+    bottom: 70px;               /* Empêche de masquer les boutons nav */
+    overflow-y: auto;           /* Permet de scroller vers le bas pour lire la suite */
+    padding-right: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Style cyberpunk pour la barre de scroll */
+.two-col::-webkit-scrollbar { width: 3px; }
+.two-col::-webkit-scrollbar-thumb { background: var(--cyan); }

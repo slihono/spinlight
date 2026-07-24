@@ -145,3 +145,18 @@
 .works-container::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.02);
 }
+/* ── Adaptation Mobile & Scroll interne ── */
+@media (max-width: 768px) {
+  .bio-grid {
+    grid-template-columns: 1fr; /* Met les cartes sur 1 seule colonne */
+    top: 20%;                   /* Remonte un peu l'en-tête */
+    bottom: 70px;               /* S'arrête juste au-dessus des boutons du bas */
+    overflow-y: auto;           /* Active le défilement pour voir tout le texte */
+    padding-right: 8px;         /* Espace pour la barre de défilement */
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Style cyberpunk pour la barre de scroll */
+.bio-grid::-webkit-scrollbar { width: 3px; }
+.bio-grid::-webkit-scrollbar-thumb { background: var(--cyan); }

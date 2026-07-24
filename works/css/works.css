@@ -282,8 +282,18 @@
     bottom: 75px;       /* Laisse un espace en bas pour la barre de navigation */
     
     /* Activation du scroll vertical */
-    overflow-y: auto;
-    overflow-x: hidden;
+   /* ── Adaptation Mobile ── */
+ @media (max-width: 768px) {
+  .works-container {
+    top: 20%;
+    bottom: 70px;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes de cartes au lieu de 4 */
+    gap: 0.8rem;
+  }
+}
     
     /* Scroll fluide pour iOS / iPhone */
     -webkit-overflow-scrolling: touch;
