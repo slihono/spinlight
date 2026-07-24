@@ -66,59 +66,82 @@
   color: var(--text);
   font-weight: 300;
 }
-
 /* ══════════════════════════════════════════════
-   RESPONSIVE DESIGN — MOBILE & TABLETTE
+   RESPONSIVE DESIGN & SCROLL — MOBILE & TABLETTE
 ══════════════════════════════════════════════ */
 
 /* --- Mobile (< 768px) --- */
 @media (max-width: 767px) {
   
-  /* Layouts fluides */
-  .works-container, .bio-grid, .two-col {
-    top: 18%;
+  /* 1. Rendre toutes les zones de contenu défilables */
+  .works-container, 
+  .bio-grid, 
+  .two-col {
+    position: absolute;
+    top: 20%;           /* On remonte un peu le haut pour gagner de l'espace */
     left: 4%;
     right: 4%;
-    bottom: 80px; /* Espace pour la navigation du bas */
+    bottom: 75px;       /* Laisse un espace en bas pour la barre de navigation */
+    
+    /* Activation du scroll vertical */
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    /* Scroll fluide pour iOS / iPhone */
+    -webkit-overflow-scrolling: touch;
+    
+    /* Espacement interne pour que le dernier élément ne soit pas collé au bas */
+    padding-bottom: 2.5rem;
+    padding-right: 4px; /* Évite que le texte colle à la barre de scroll */
   }
 
-  /* Modification des grilles */
+  /* 2. Adaptation des grilles en 1 ou 2 colonnes */
   .works-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
   }
 
-  .bio-grid, .two-col {
-    grid-template-columns: 1fr; /* 1 seule colonne */
-    gap: 1.2rem;
+  .bio-grid, 
+  .two-col {
+    grid-template-columns: 1fr; /* 1 seule colonne : tout s'empile */
+    gap: 1.5rem;
   }
 
-  /* Masquer le hint de scroll latéral */
+  /* Masquer le hint de scroll latéral fixe sur mobile */
   .scroll-hint {
     display: none;
   }
 
   /* Ajustement de la modale */
   .modal-box {
-    width: 95%;
+    width: 92%;
+    max-height: 85vh;    /* Si la description du projet est longue dans le modal */
+    overflow-y: auto;
     padding: 1.5rem;
-  }
-
-  /* Ajustement iFrame Scratch */
-  iframe {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 4 / 3;
   }
 }
 
-/* --- Tablette (768px – 1024px) --- */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .works-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 cartes par ligne */
-  }
+/* ── Personnalisation de la barre de scroll (Style Cyberpunk) ── */
+.bio-grid::-webkit-scrollbar,
+.two-col::-webkit-scrollbar,
+.works-container::-webkit-scrollbar {
+  width: 3px;
+}
 
-  .two-col, .bio-grid {
-    gap: 1.5rem;
-  }
+.bio-grid::-webkit-scrollbar-thumb,
+.two-col::-webkit-scrollbar-thumb,
+.works-container::-webkit-scrollbar-thumb {
+  background: var(--cyan);
+  border-radius: 2px;
+}
+
+.bio-card.red::-webkit-scrollbar-thumb,
+.red-block::-webkit-scrollbar-thumb {
+  background: var(--red);
+}
+
+.bio-grid::-webkit-scrollbar-track,
+.two-col::-webkit-scrollbar-track,
+.works-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
 }
