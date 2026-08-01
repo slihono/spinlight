@@ -28,7 +28,8 @@ const WORKS = {
     title: 'IT BÉNÉVOLAT — SUMMIT CHURCH',
     desc:  "Volunteering in the IT services at Summit Church. Managing electronic equipment, technical support, and network maintenance.",
     tags:  ['IT Support', 'Networking', 'Volunteering'],
-    red:   false
+    red:   false,
+     link:  ''
   },
   web: {
     title: 'WEB DEV PROJECT',
