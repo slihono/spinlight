@@ -55,6 +55,12 @@ const WORKS = {
     tags:  ['Drum', 'Music', 'Performance'],
     red:   true
   },
+  MultiModal: {
+    title: 'Sleeping Detector',
+    desc:  "Cognitve Radar, MultiModal Vigilance AI ",
+    tags:  ['Drum', 'Music', 'Performance'],
+    red:   true
+  },
   game: {
     title: 'GAME DEV CONCEPT',
     desc:  "Concept for a video game in development. A personal project inspired by anime and dark fantasy universes.",
