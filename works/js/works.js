@@ -57,9 +57,10 @@ const WORKS = {
   },
   MultiModal: {
     title: 'Sleeping Detector',
-    desc:  "Cognitve Radar, MultiModal Vigilance AI ",
+    desc:  "Cognitve Radar, MultiModal Vigilance AI, An intelligent physiological mirror, An embedded biometric assistant, An augmented human‑perception system. ",
     tags:  ['Drum', 'Music', 'Performance'],
-    red:   true
+    red:   true,
+    link:  'https://github.com/slihono/Multimodal'
   },
   game: {
     title: 'GAME DEV CONCEPT',
