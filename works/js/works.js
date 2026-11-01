@@ -29,7 +29,7 @@ const WORKS = {
     desc:  "Volunteering in the IT services at Summit Church. Managing electronic equipment, technical support, and network maintenance.",
     tags:  ['IT Support', 'Networking', 'Volunteering'],
     red:   false,
-     link:  ''
+     link:  'https://github.com/slihono/spinlight/blob/main/CPSC-IFSC%201105%20Fall%202025.SLP%20Proposal.Seneve%20Lihono.pdf'
   },
   web: {
     title: 'WEB DEV PROJECT',
