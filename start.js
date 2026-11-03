@@ -46,3 +46,12 @@ document.addEventListener('touchend', e => {
 
 // ── Animation d'entrée ──
 document.getElementById('page').classList.add('page-enter');
+
+// Les nouveaux accès directs utilisent la même transition que le profil.
+document.querySelectorAll('[data-home-nav]').forEach(link => {
+  link.addEventListener('click', e => {
+    if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    navigateTo(link.href);
+  });
+});

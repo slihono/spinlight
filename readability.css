@@ -1,0 +1,142 @@
+/* Typography and contact-link refinements. Original artwork, palette and effects live in
+   shared.css and the page stylesheets and must remain unchanged. */
+
+.bio-text,
+.study-text,
+.modal-desc {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: normal;
+}
+
+.bio-text p + p {
+  margin-top: 0.65rem;
+}
+
+.bio-text ul {
+  padding-left: 1.1rem;
+}
+
+.bio-text li + li {
+  margin-top: 0.4rem;
+}
+
+.bio-text strong {
+  font-weight: 600;
+}
+
+.bio-text a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 9px;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+  transition: filter 0.2s;
+}
+
+.contact-icon img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.contact-icon:hover,
+.contact-icon:focus-visible {
+  background: transparent;
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.35));
+}
+
+.contact-icon:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.profile-contact-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.profile-contact-links > a:not(.contact-icon) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.bio-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+/* Keep the same four bio cards and the two Vision panels. Bound the text area
+   so the larger body type remains readable on shorter screens. */
+.bio-grid,
+.two-col {
+  bottom: 16%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  align-content: start;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+.work-label {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.035em;
+}
+
+.work-status {
+  font-size: 0.6rem;
+}
+
+.modal-title {
+  margin-top: 1.1rem;
+}
+
+.modal-close {
+  font-size: 0.9rem;
+}
+
+.sub-name {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.18em;
+  max-width: 80vw;
+}
+
+@media (max-width: 480px) {
+  .tag-line {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    max-width: 85vw;
+  }
+
+  .sub-name {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+  }
+
+  .start-btn {
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+  }
+}

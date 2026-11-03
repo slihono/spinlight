@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="journal-document">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Alarm — A Build Journal | Seneve Lihono</title>
+  <meta name="author" content="Seneve Lihono">
+  <meta name="description" content="The story of my ESP32 alarm clock: a microSD setback, LCD debugging, internet radio and a LEGO enclosure. A build journal in nineteen photographs.">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css?v=20261102">
+  <link rel="stylesheet" href="alarm.css?v=20261102">
+  <script src="alarm.js?v=20261102" defer></script>
+</head>
+<body class="journal-page">
+  <a href="#journal-main" class="journal-skip">Skip to the journal</a>
+  <div class="journal-progress" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <svg class="circuit" aria-hidden="true" viewBox="0 0 220 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 0 L40 120 L80 160 L80 250 L20 310 L20 400 L60 440 L60 550 L30 580 L30 800" stroke="#00e5ff" stroke-width="1.5" opacity=".4"/>
+    <circle cx="40" cy="120" r="5" stroke="#00e5ff" stroke-width="1.5" opacity=".7"/>
+    <circle cx="80" cy="250" r="5" stroke="#00e5ff" stroke-width="1.5" opacity=".7"/>
+  </svg>
+
+  <div class="journal-wrap">
+    <header class="journal-header">
+      <a class="journal-brand" href="../index.html">SpinLight <span>/ Build journal</span></a>
+      <nav class="journal-header-links" aria-label="Journal navigation">
+        <a href="#contents">Contents</a>
+        <a href="../works/works.html?project=alarm">My Works <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="journal-main" tabindex="-1">
+      <section class="journal-hero" aria-labelledby="journal-title">
+        <div>
+          <p class="journal-eyebrow">Completed project / A build journal</p>
+          <h1 id="journal-title">My first<br> <span>alarm.</span></h1>
+          <p class="journal-deck">A burned microSD adapter paused my first attempt. I came back with an ESP32, the parts I already owned and a new plan: wake up to internet radio, inside a case built from LEGO.</p>
+          <p class="journal-byline">A project and photo journal by <strong>Seneve Lihono</strong></p>
+          <p class="journal-meta"><span>ESP32</span><span>MicroPython</span><span>Thonny</span><span>19 photographs</span></p>
+        </div>
+        <figure class="journal-cover">
+          <a class="journal-photo" data-photo href="../assets/alarm/finished-alarm.jpeg" aria-label="Enlarge photo: the powered LEGO alarm enclosure">
+            <img src="../assets/alarm/finished-alarm.jpeg" alt="The grey and black LEGO enclosure around a powered blue LCD, with a pink accent above the screen." width="2048" height="1536" fetchpriority="high" decoding="async">
+          </a>
+          <figcaption><span>01</span>The LEGO enclosure, powered up. The rest of the story sits behind that blue screen.</figcaption>
+        </figure>
+      </section>
+
+      <div class="journal-layout">
+        <aside class="journal-contents" id="contents">
+          <h2>Inside the build</h2>
+          <nav aria-label="Journal chapters">
+            <ol>
+              <li><a href="#first-attempt"><span>01</span>When it stopped</a></li>
+              <li><a href="#restart"><span>02</span>A new direction</a></li>
+              <li><a href="#display"><span>03</span>The LCD tests</a></li>
+              <li><a href="#enclosure"><span>04</span>The LEGO case</a></li>
+              <li><a href="#integration"><span>05</span>Audio &amp; controls</a></li>
+              <li><a href="#first-build"><span>06</span>The first build</a></li>
+            </ol>
+          </nav>
+          <p>Six chapters.<br>Nineteen photographs.<br>Open a photo to look closer.</p>
+        </aside>
+
+        <article class="journal-article" aria-label="The story of My First Alarm">
+          <section class="journal-entry" id="first-attempt">
+            <p class="journal-entry-number">01 / THE FIRST ATTEMPT</p>
+            <h2>The version that stopped at the soldering iron.</h2>
+            <div class="journal-prose">
+              <p>The original idea was a smart alarm clock that could play music from a microSD card, display the weather, time and date, and eventually support voice recognition.</p>
+              <p>I had written most of the software when I accidentally burned the microSD adapter while soldering it. The project came to a stop. Getting the software ready had not been enough to finish the device.</p>
+            </div>
+            <div class="journal-gallery">
+              <figure class="journal-wide">
+                <a class="journal-photo" data-photo href="../assets/alarm/soldering-workbench.jpeg" aria-label="Enlarge photo: the soldering workbench">
+                  <img src="../assets/alarm/soldering-workbench.jpeg" alt="A soldering iron, helping-hands magnifier, wires and small tools laid out on the workbench." width="1600" height="1200" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>02</span>The workbench: soldering iron, helping hands and the small connections that needed attention.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/button-solder-closeup.jpeg" aria-label="Enlarge photo: a small wired button under the magnifier">
+                  <img src="../assets/alarm/button-solder-closeup.jpeg" alt="A small component and its orange and brown wires held under a helping-hands magnifier." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>03</span>A close look at one of the small wired connections.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/button-soldering.jpeg" aria-label="Enlarge photo: preparing a connection with the helping hands">
+                  <img src="../assets/alarm/button-soldering.jpeg" alt="A wider view of the magnifier and clips supporting a small component during wiring work." width="1600" height="1200" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>04</span>Holding a connection steady while working on the wiring.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="journal-entry" id="restart">
+            <p class="journal-entry-number">02 / A DIFFERENT PLAN</p>
+            <h2>Restart with what was already on the table.</h2>
+            <div class="journal-prose">
+              <p>What brought me back was noticing how different my mornings felt when I woke up to music. That was enough motivation to revisit the project.</p>
+              <p>This time, I simplified the design around the components I already had: internet radio that starts at alarm time, time/date/weather information, and an embedded web server to configure the alarm from my phone.</p>
+              <p>I also explored Spotify integration before choosing a direct internet radio stream. The rebuild had a clearer direction.</p>
+            </div>
+            <blockquote class="journal-quote">“I challenged myself to build it using only the components I already had.”</blockquote>
+            <div class="journal-gallery">
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/breadboard-wiring.jpeg" aria-label="Enlarge photo: the first breadboard circuit">
+                  <img src="../assets/alarm/breadboard-wiring.jpeg" alt="An ESP32 on a breadboard with buttons, a round sound component and wires leading to an unlit LCD." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>05</span>The circuit laid out on a breadboard, before everything moved into a housing.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/powered-breadboard.jpeg" aria-label="Enlarge photo: the powered ESP32 breadboard">
+                  <img src="../assets/alarm/powered-breadboard.jpeg" alt="The powered ESP32 and several wired buttons on a breadboard, with the blue LCD above it." width="1600" height="1200" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>06</span>A powered test setup, with the controls and display still easy to reach.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="journal-entry" id="display">
+            <p class="journal-entry-number">03 / READING THE SCREEN</p>
+            <h2>The backlight was only the beginning.</h2>
+            <div class="journal-prose">
+              <p>The LCD could light up and still show strings of unreadable characters. Fixing unstable I2C communication with the screen became one of the main debugging tasks.</p>
+              <p>The clean “Bonjour Seneve!” welcome message was a different kind of milestone: readable text coming out of the hardware. Other tests recorded the name display, symbols, Wi-Fi initialisation and unavailable weather information.</p>
+            </div>
+            <p class="journal-note">Powering the screen and getting readable text were two different milestones.</p>
+            <div class="journal-gallery">
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/first-lcd-characters.jpeg" aria-label="Enlarge photo: unreadable characters on the LCD">
+                  <img src="../assets/alarm/first-lcd-characters.jpeg" alt="The bare blue LCD held in a hand, showing a row of mixed, unreadable characters." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>07</span>A lit screen, but not yet a clean message.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/welcome-message.jpeg" aria-label="Enlarge photo: the Bonjour Seneve welcome message">
+                  <img src="../assets/alarm/welcome-message.jpeg" alt="The blue LCD clearly reads Bonjour Seneve! and Demarrage... against a dark background." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>08</span>“Bonjour Seneve! / Demarrage...” — a readable startup message.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/name-and-symbols.jpeg" aria-label="Enlarge photo: testing a name and symbols on the LCD">
+                  <img src="../assets/alarm/name-and-symbols.jpeg" alt="The connected LCD shows a name and small symbols while the ESP32 sits on a breadboard below." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>09</span>Trying text and symbols on the display.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/weather-wifi-test.jpeg" aria-label="Enlarge photo: the weather and Wi-Fi test message">
+                  <img src="../assets/alarm/weather-wifi-test.jpeg" alt="A breadboard setup whose LCD reports Meteo indispo and Init WiFi..." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>10</span>The screen also records the unfinished states: unavailable weather and Wi-Fi initialisation.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="journal-entry" id="enclosure">
+            <p class="journal-entry-number">04 / BUILDING A BODY</p>
+            <h2>A LEGO case for a real circuit.</h2>
+            <div class="journal-prose">
+              <p>I did not have a case or access to a 3D printer. My solution was to build an enclosure with LEGO bricks I found at home.</p>
+              <p>Building around the LCD turned a flat module into something I could hold, set on a desk and open again while testing the wiring. The frame changed as I tried different arrangements around the screen.</p>
+            </div>
+            <div class="journal-gallery">
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/building-the-lego-frame.jpeg" aria-label="Enlarge photo: the early LEGO frame">
+                  <img src="../assets/alarm/building-the-lego-frame.jpeg" alt="An early grey LEGO frame with pink accents around the LCD, held above loose bricks and electronic parts." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>11</span>An early frame, with the display wires still extending from the side.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/case-and-loose-leads.jpeg" aria-label="Enlarge photo: the more detailed LEGO enclosure">
+                  <img src="../assets/alarm/case-and-loose-leads.jpeg" alt="The grey and black enclosure with more front detail, held above the remaining LEGO pieces." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>12</span>The enclosure gains its front details while the electronics remain accessible.</figcaption>
+              </figure>
+              <figure class="journal-wide">
+                <a class="journal-photo" data-photo href="../assets/alarm/case-on-the-desk.jpeg" aria-label="Enlarge photo: the enclosure standing on the desk">
+                  <img src="../assets/alarm/case-on-the-desk.jpeg" alt="The LEGO alarm enclosure standing on a wooden desk with an unlit screen and exposed leads." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>13</span>From a loose display to a case that can stand on the desk.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="journal-entry" id="integration">
+            <p class="journal-entry-number">05 / MAKING IT WORK TOGETHER</p>
+            <h2>One small computer. Several jobs.</h2>
+            <div class="journal-prose">
+              <p>The ESP32 had to handle audio, the alarm configuration page and physical controls. My biggest software lessons came from making those jobs coexist.</p>
+            </div>
+            <div class="journal-debug-notes">
+              <div><h3>Keep the controls responsive.</h3><p>I worked on MicroPython so the web server could stay responsive while the program handled physical button inputs.</p></div>
+              <div><h3>Work within the memory budget.</h3><p>I2S audio streaming exposed RAM limitations. Those limits had to be considered alongside the rest of the program.</p></div>
+              <div><h3>Find the audio, not just a radio page.</h3><p>A radio station's web page was not the audio stream itself. Finding direct MP3 streams became part of the debugging work.</p></div>
+            </div>
+            <div class="journal-gallery">
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/electronics-behind-the-case.jpeg" aria-label="Enlarge photo: the electronics behind the enclosure">
+                  <img src="../assets/alarm/electronics-behind-the-case.jpeg" alt="The back of the LEGO display housing connected to an ESP32 and a small sound component by exposed wires." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>14</span>The other side of the enclosure: controller, wiring and connections.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/enclosure-on-the-bench.jpeg" aria-label="Enlarge photo: another powered enclosure test">
+                  <img src="../assets/alarm/enclosure-on-the-bench.jpeg" alt="The enclosed LCD powered on beside a connected ESP32 and external wiring on a sticker-covered surface." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>15</span>Testing the display after it moved into the LEGO housing.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="journal-entry" id="first-build">
+            <p class="journal-entry-number">06 / THE FIRST BUILD</p>
+            <h2>A first version, with a story behind it.</h2>
+            <div class="journal-prose">
+              <p>This is the first completed version of My First Alarm. The build ended up with internet radio as its music source and a LEGO enclosure shaped around the LCD.</p>
+              <p>The photographs keep the less polished moments too: blank displays, character tests and leads still outside the housing. Together, they show how the device took shape.</p>
+            </div>
+            <div class="journal-gallery">
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/enclosed-display-test.jpeg" aria-label="Enlarge photo: the enclosed display and controller together">
+                  <img src="../assets/alarm/enclosed-display-test.jpeg" alt="The lit display in its LEGO case held in one hand, connected to the ESP32 and external wiring." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>16</span>The enclosure and controller connected for another display test.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/enclosure-character-test.jpeg" aria-label="Enlarge photo: a character test inside the finished housing">
+                  <img src="../assets/alarm/enclosure-character-test.jpeg" alt="The LEGO housing held close to the camera, its blue LCD displaying rows of test characters." width="1200" height="1600" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>17</span>A close view of the screen during a character test.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/lego-alarm-closeup.jpeg" aria-label="Enlarge photo: the powered enclosure close up">
+                  <img src="../assets/alarm/lego-alarm-closeup.jpeg" alt="A close front view of the powered alarm enclosure, with its blue LCD and grey LEGO details." width="1600" height="1200" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>18</span>The blue screen and the LEGO details, seen up close.</figcaption>
+              </figure>
+              <figure>
+                <a class="journal-photo" data-photo href="../assets/alarm/connected-speaker-and-display.jpeg" aria-label="Enlarge photo: the display with external controls and speaker">
+                  <img src="../assets/alarm/connected-speaker-and-display.jpeg" alt="The powered LEGO display case with wired buttons, an ESP32 and a small speaker laid out beside it." width="1600" height="1200" loading="lazy" decoding="async">
+                </a>
+                <figcaption><span>19</span>The wider setup, with the controls and sound components beside the enclosure.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="journal-end" aria-labelledby="journal-takeaway">
+            <h2 id="journal-takeaway">The lessons I kept.</h2>
+            <p>Embedded programming, hardware debugging and soldering all became part of the same project. I originally expected a one-day build. Working through the setbacks taught me far more than that first estimate allowed for.</p>
+            <div class="journal-end-links">
+              <a href="https://github.com/slihono/my-mini-site" target="_blank" rel="noopener noreferrer">Original project notes <span aria-hidden="true">↗</span></a>
+              <a href="../works/works.html?project=alarm">Back to My Works <span aria-hidden="true">←</span></a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+    <footer class="journal-footer"><span>SENEVE LIHONO / SPINLIGHT</span><span>MY FIRST ALARM · BUILD JOURNAL</span></footer>
+  </div>
+
+  <dialog class="journal-lightbox" id="journal-lightbox" aria-labelledby="journal-viewer-title" aria-describedby="journal-viewer-caption">
+    <div class="journal-viewer-top"><h2 id="journal-viewer-title">From the build journal</h2><button type="button" id="journal-viewer-close" aria-label="Close photo">Close <span aria-hidden="true">×</span></button></div>
+    <img id="journal-viewer-image" alt="">
+    <p id="journal-viewer-error" role="status" hidden>This photo could not be loaded. Try another photograph.</p>
+    <div class="journal-viewer-controls">
+      <button type="button" id="journal-viewer-prev" aria-label="Previous photo">←</button>
+      <div><p class="journal-photo-counter" id="journal-viewer-counter" aria-live="polite"></p><p id="journal-viewer-caption"></p></div>
+      <button type="button" id="journal-viewer-next" aria-label="Next photo">→</button>
+    </div>
+  </dialog>
+</body>
+</html>

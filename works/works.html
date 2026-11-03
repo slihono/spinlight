@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,9 @@
   <meta name="author" content="Seneve Lihono">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../shared.css">
-  <link rel="stylesheet" href="../works/css/works.css">
+  <link rel="stylesheet" href="../shared.css?v=20261102">
+  <link rel="stylesheet" href="../works/css/works.css?v=20261102">
+  <link rel="stylesheet" href="../readability.css?v=20261102">
 </head>
 <body>
 
@@ -47,12 +48,11 @@
       <div class="works-grid">
 
         <!-- ✓ Terminés (cyan) -->
-       <div class="work-icon-card" data-key="scratch">
+        <div class="work-icon-card" data-key="scratch">
   <span class="work-status">✓ DONE</span>
   <div class="work-emoji">🐱</div>
   <div class="work-label">Scratch Projects</div>
       </div>
-
 
         <div class="work-icon-card" data-key="drone">
           <span class="work-status">✓ DONE</span>
@@ -69,10 +69,34 @@
         <div class="work-icon-card" data-key="church">
           <span class="work-status">✓ DONE</span>
           <div class="work-emoji">⛪</div>
-          <div class="work-label">IT Church Bénévolat</div>
+          <div class="work-label">Church IT Volunteering</div>
         </div>
 
-        <!-- 🔴 En cours (rouge) -->
+        <div class="work-icon-card" data-key="spypath">
+          <span class="work-status">✓ DONE</span>
+          <div class="work-emoji">🕸️</div>
+          <div class="work-label">Spypath</div>
+        </div>
+
+        <div class="work-icon-card" data-key="alarm">
+          <span class="work-status">✓ DONE</span>
+          <div class="work-emoji">⏰</div>
+          <div class="work-label">My First Alarm — ESP32</div>
+        </div>
+
+        <div class="work-icon-card" data-key="petit">
+          <span class="work-status">✓ DONE</span>
+          <div class="work-emoji">🌷</div>
+          <div class="work-label">Petit — Creative Web</div>
+        </div>
+
+        <div class="work-icon-card" data-key="blessing">
+          <span class="work-status">✓ DONE</span>
+          <div class="work-emoji">🎂</div>
+          <div class="work-label">Blessing — Interactive Greeting</div>
+        </div>
+
+        <!-- 🔴 En cours et à venir (rouge) -->
         <div class="work-icon-card locked" data-key="web">
           <span class="work-status">WIP</span>
           <div class="work-emoji">🌐</div>
@@ -96,13 +120,13 @@
           <div class="work-emoji">🥁</div>
           <div class="work-label">Drum Covers</div>
         </div>
-         <div class="work-icon-card locked" data-key="MultiModal">
+
+        <div class="work-icon-card locked" data-key="MultiModal">
           <span class="work-status">SOON</span>
           <div class="work-emoji">🫆</div>
-          <div class="work-label">MultiModal Module Drowsiness</div>
+          <div class="work-label">Multimodal Drowsiness Detection</div>
         </div>
 
-        <!-- 🔴 À venir (rouge) -->
         <div class="work-icon-card locked" data-key="game">
           <span class="work-status">SOON</span>
           <div class="work-emoji">🎮</div>
@@ -127,6 +151,49 @@
           <div class="work-label">UI Design Work</div>
         </div>
 
+        <div class="work-icon-card locked" data-key="yezik">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🎚️</div>
+          <div class="work-label">Yezik Studio</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="matho">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">📐</div>
+          <div class="work-label">Matho</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="yem">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🧠</div>
+          <div class="work-label">Yem — Local AI Chat</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="yema">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🎓</div>
+          <div class="work-label">YEMA — Student Opportunities</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="fiveplay">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🕹️</div>
+          <div class="work-label">FivePlay Controller</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="vaneve">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🎬</div>
+          <div class="work-label">Vaneve — Watch Together</div>
+        </div>
+
+        <div class="work-icon-card locked" data-key="hub">
+          <span class="work-status">WIP</span>
+          <div class="work-emoji">🎛️</div>
+          <div class="work-label">Hub — Ardour Exploration</div>
+        </div>
+
+        <!-- Secret Project — dernière carte -->
         <div class="work-icon-card locked" data-key="open">
           <span class="work-status">???</span>
           <div class="work-emoji">🔮</div>
@@ -160,6 +227,6 @@
     </div>
   </div>
 
-  <script src="../works/js/works.js"></script>
+  <script src="../works/js/works.js?v=20261102"></script>
 </body>
 </html>
