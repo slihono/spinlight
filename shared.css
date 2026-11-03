@@ -91,10 +91,13 @@ body::before {
 /* ── Circuit board décoratif (SVG latéral) ── */
 .circuit {
   position: absolute;
-  left: 0;
+  left: -44px;
   top: 0;
   width: 220px;
   height: 100%;
+  /* Keep the original trace, clipped inside the outer gutter on every page. */
+  --circuit-visible-edge: clamp(8px, calc(4vw - 8px), 48px);
+  clip-path: inset(0 calc(100% - 44px - var(--circuit-visible-edge)) 0 0);
   opacity: 0.6;
   pointer-events: none;
   z-index: 1;

@@ -1,0 +1,523 @@
+/* Cover-page composition. Original artwork, palette and animation keyframes
+   remain in start.css/shared.css; all changes here are scoped to the home. */
+.home-page #page {
+  width: 100%;
+  height: calc(100svh - 56px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cyan) var(--dark);
+}
+
+.home-page .s0-bg,
+.home-page .scanlines,
+.home-page .circuit {
+  position: fixed;
+}
+
+.home-page .circuit {
+  opacity: 0.4;
+}
+
+.home-page .scanlines {
+  opacity: 0.4;
+}
+
+.home-layout {
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-areas: 'eyebrow artwork' 'identity artwork' 'details artwork' 'work work';
+  column-gap: 80px;
+  align-content: center;
+  width: min(1180px, calc(100% - 112px));
+  min-height: 100%;
+  margin-inline: auto;
+  padding-block: 56px 40px;
+}
+
+.home-layout::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 20px 38% 40px -28px;
+  background: linear-gradient(90deg, rgba(5, 5, 8, 0.7), rgba(5, 5, 8, 0.45) 80%, transparent);
+  pointer-events: none;
+}
+
+.home-page .s0-left {
+  display: contents;
+}
+
+.home-page .tag-line {
+  grid-area: eyebrow;
+  max-width: none;
+  margin-bottom: 18px;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  line-height: 1.7;
+  opacity: 1;
+}
+
+.home-identity {
+  grid-area: identity;
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.home-page .big-name {
+  font-weight: 400;
+  font-size: clamp(4.5rem, 6.2vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: 0.025em;
+}
+
+.home-page .big-name .name-first {
+  color: inherit;
+  display: inline-block;
+}
+
+.home-page .dark-figure {
+  grid-area: artwork;
+  position: relative;
+  inset: auto;
+  transform: none;
+  align-self: center;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-page .figure-svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.home-details {
+  grid-area: details;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  margin-top: 22px;
+}
+
+.home-page .sub-name {
+  max-width: none;
+  margin: 0;
+  font: 500 1rem/1.6 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-wrap: balance;
+}
+
+.home-page .sub-name > span {
+  padding-inline: 0.3em;
+  color: var(--text);
+}
+
+.home-intro {
+  max-width: 34rem;
+  margin-top: 12px;
+  font: 400 1rem/1.75 'Segoe UI', Arial, sans-serif;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.home-page .divider {
+  margin: 22px 0;
+  width: 48px;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-page .home-actions .start-btn {
+  justify-content: center;
+  gap: 24px;
+  min-height: 50px;
+  padding: 12px 24px;
+  font-size: 1.12rem;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.home-page .home-primary {
+  background: var(--cyan);
+  color: var(--dark);
+}
+
+.home-page .home-primary:hover {
+  background: var(--cyan);
+  color: var(--dark);
+}
+
+.home-page .home-profile-button {
+  border-color: rgba(0, 229, 255, 0.35);
+  color: var(--text);
+}
+
+.home-page .home-profile-button:hover {
+  border-color: var(--cyan);
+  color: var(--dark);
+}
+
+.home-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  margin-top: 12px;
+}
+
+.home-quick-links a,
+.home-all-work {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--text);
+  font: 400 0.82rem/1.6 'Segoe UI', Arial, sans-serif;
+  text-decoration: none;
+  text-underline-offset: 0.25em;
+}
+
+.home-quick-links a:hover,
+.home-all-work:hover {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.home-completed {
+  grid-area: work;
+  min-width: 0;
+  margin-top: 46px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.home-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.home-eyebrow {
+  margin-bottom: 8px;
+  color: var(--cyan);
+  font: 400 0.65rem/1.7 'Share Tech Mono', monospace;
+  letter-spacing: 0.14em;
+}
+
+.home-completed h2 {
+  color: #fff;
+  font: 600 1.6rem/1.2 'Segoe UI', Arial, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.home-completed h2 > span,
+.home-all-work > span {
+  color: var(--cyan);
+}
+
+.home-completed-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-project {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  min-height: 100px;
+  padding: 18px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(10, 10, 18, 0.9);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.home-project:hover {
+  border-color: rgba(0, 229, 255, 0.6);
+  background: rgba(0, 229, 255, 0.055);
+}
+
+.home-project-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+.home-project > span:not(.home-project-arrow) {
+  min-width: 0;
+}
+
+.home-project strong {
+  display: block;
+  font: 600 0.93rem/1.4 'Segoe UI', Arial, sans-serif;
+  text-wrap: balance;
+}
+
+.home-project small {
+  display: block;
+  margin-top: 5px;
+  font: 400 0.77rem/1.4 'Segoe UI', Arial, sans-serif;
+  text-wrap: pretty;
+}
+
+.home-project-arrow {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--cyan);
+  font-size: 1rem;
+}
+
+.home-page a:focus-visible,
+.home-page button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+.home-page .home-primary:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--dark);
+}
+
+.home-page .home-profile-button:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--cyan);
+}
+
+/* Keep the original progression bars; give their links usable hit areas. */
+.home-page .progress {
+  bottom: 6px;
+  gap: 8px;
+  padding-inline: 8px;
+  background: rgba(5, 5, 8, 0.94);
+}
+
+.home-page .prog-dot {
+  position: relative;
+  width: 40px;
+  height: 44px;
+  background: none;
+}
+
+.home-page .prog-dot.active {
+  width: 56px;
+  background: none;
+  box-shadow: none;
+}
+
+.home-page .prog-dot::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 21px;
+  width: 24px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.home-page .prog-dot.active::before {
+  width: 40px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+.home-page .prog-dot:hover::before {
+  background: var(--cyan);
+}
+
+@media (max-width: 1100px) {
+  .home-layout {
+    width: calc(100% - 96px);
+    column-gap: 48px;
+  }
+
+  .home-completed-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .home-layout {
+    width: calc(100% - 64px);
+    padding-block: 38px 40px;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    grid-template-areas: 'eyebrow eyebrow' 'identity artwork' 'details details' 'work work';
+    column-gap: 24px;
+  }
+
+  .home-layout::before {
+    inset: 12px -16px 30px;
+    background: rgba(5, 5, 8, 0.25);
+  }
+
+  .home-page .tag-line {
+    margin-bottom: 14px;
+  }
+
+  .home-identity {
+    align-self: center;
+  }
+
+  .home-page .big-name {
+    font-size: clamp(3.6rem, 8.4vw, 5.2rem);
+  }
+
+  .home-page .dark-figure {
+    height: 210px;
+  }
+
+  .home-details {
+    margin-top: 22px;
+  }
+
+  .home-completed {
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-layout {
+    width: calc(100% - 48px);
+    padding-top: 30px;
+    grid-template-columns: minmax(0, 1fr) 112px;
+    column-gap: 16px;
+  }
+
+  .home-page .tag-line {
+    font-size: 0.65rem;
+    letter-spacing: 0.13em;
+    margin-bottom: 8px;
+  }
+
+  .home-page .big-name {
+    font-size: clamp(2rem, 21cqw, 3.5rem);
+  }
+
+  .home-page .dark-figure {
+    height: 166px;
+  }
+
+  .home-page .sub-name {
+    font-size: 0.95rem;
+  }
+
+  .home-intro {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .home-page .home-actions .start-btn {
+    gap: 16px;
+    padding-inline: 20px;
+    font-size: 1.05rem;
+  }
+
+  .home-quick-links {
+    column-gap: 20px;
+  }
+
+  .home-section-heading {
+    gap: 10px;
+  }
+
+  .home-completed h2 {
+    font-size: 1.4rem;
+  }
+
+  .home-all-work {
+    font-size: 0.77rem;
+    white-space: nowrap;
+  }
+
+  .home-eyebrow {
+    font-size: 0.59rem;
+    letter-spacing: 0.08em;
+  }
+
+  .home-completed-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .home-project {
+    min-height: 84px;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .home-project strong {
+    font-size: 0.97rem;
+  }
+
+  .home-project small {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-layout {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    column-gap: 12px;
+  }
+
+  .home-page .dark-figure {
+    height: 150px;
+  }
+
+  .home-page .home-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .home-page .home-actions .start-btn {
+    width: 100%;
+    padding-inline: 20px;
+    gap: 16px;
+    font-size: 1.05rem;
+  }
+
+  .home-section-heading {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .glitch-wrap::before,
+  .home-page .glitch-wrap::after,
+  .home-page .pulse-ring {
+    animation: none;
+  }
+
+  .home-page .page-enter,
+  .home-page .page-exit {
+    animation-duration: 0.01ms;
+  }
+
+  .home-page a,
+  .home-page button {
+    transition: none;
+  }
+}

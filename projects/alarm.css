@@ -1,0 +1,178 @@
+.journal-document {
+  height: auto;
+  min-height: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+.journal-page {
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+  background: radial-gradient(ellipse at 95% 4%, rgba(255,45,45,.07), transparent 34%), var(--dark);
+  font: 400 16px/1.8 'Segoe UI', Arial, sans-serif;
+}
+
+.journal-page .scanlines { position: fixed; z-index: 0; opacity: .35; }
+.journal-page .circuit {
+  position: fixed;
+  left: -44px;
+  width: 220px;
+  opacity: .28;
+  --circuit-visible-edge: clamp(8px, calc(4vw - 8px), 48px);
+  clip-path: inset(0 calc(100% - 44px - var(--circuit-visible-edge)) 0 0);
+  z-index: 0;
+}
+
+.journal-wrap { position: relative; z-index: 1; width: min(1180px, calc(100% - 112px)); margin: auto; }
+.journal-page a { color: inherit; text-underline-offset: .25em; }
+.journal-page a:focus-visible, .journal-page button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+.journal-skip { position: fixed; top: -100px; left: 16px; z-index: 100; padding: 10px 16px; background: var(--cyan); color: var(--dark) !important; }
+.journal-skip:focus { top: 8px; }
+.journal-progress { position: fixed; top: 0; left: 0; width: 100%; height: 2px; transform: scaleX(var(--reading-progress, 0)); transform-origin: left; background: var(--cyan); z-index: 80; pointer-events: none; }
+
+.journal-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 76px;
+  border-bottom: 1px solid rgba(200,208,224,.15);
+  background: rgba(5,5,8,.96);
+}
+.journal-brand { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font: 400 1.45rem 'Bebas Neue', sans-serif; letter-spacing: .08em; text-decoration: none; }
+.journal-brand span { color: var(--cyan); font: 400 .65rem 'Share Tech Mono', monospace; letter-spacing: .1em; }
+.journal-header-links { display: flex; gap: 26px; }
+.journal-header-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: .8rem; text-decoration: none; }
+.journal-header-links a:hover { color: var(--cyan); }
+
+.journal-hero { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); align-items: center; gap: 64px; padding: 64px 0 54px; border-bottom: 1px solid rgba(200,208,224,.15); }
+.journal-eyebrow { color: var(--cyan); font: 400 .68rem/1.7 'Share Tech Mono', monospace; letter-spacing: .16em; text-transform: uppercase; }
+.journal-hero h1 { margin: 22px 0; color: #fff; font: 400 clamp(4.3rem,7vw,6.8rem)/.92 'Bebas Neue', sans-serif; letter-spacing: .025em; text-transform: uppercase; }
+.journal-hero h1 span { color: var(--cyan); }
+.journal-deck { max-width: 35rem; font-size: 1.03rem; line-height: 1.85; }
+.journal-byline { margin-top: 24px; font-size: .8rem; color: #a8b4c5; }
+.journal-byline strong { color: var(--text); font-weight: 600; }
+.journal-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 20px; font: 400 .68rem/1.7 'Share Tech Mono', monospace; color: var(--cyan); }
+.journal-cover figcaption { margin-top: 12px; }
+.journal-cover .journal-photo img { aspect-ratio: 4/3; object-fit: cover; object-position: center 40%; }
+
+.journal-layout { display: grid; grid-template-columns: 180px minmax(0,1fr); gap: 64px; align-items: start; padding-top: 54px; }
+.journal-contents { position: sticky; top: 105px; scroll-margin-top: 100px; }
+.journal-contents h2 { font: 400 .7rem/1.6 'Share Tech Mono', monospace; color: var(--red); letter-spacing: .13em; text-transform: uppercase; }
+.journal-contents ol { margin-top: 16px; list-style: none; }
+.journal-contents a { display: grid; grid-template-columns: 22px minmax(0,1fr); gap: 8px; align-items: center; min-height: 44px; padding: 8px 0 8px 10px; border-left: 1px solid rgba(200,208,224,.16); font-size: .78rem; line-height: 1.5; text-decoration: none; }
+.journal-contents a span { color: var(--cyan); font-family: 'Share Tech Mono', monospace; font-size: .65rem; }
+.journal-contents a:hover, .journal-contents a[aria-current] { border-color: var(--cyan); color: #fff; }
+.journal-contents p { margin: 22px 0 0 10px; font-size: .73rem; color: #a8b4c5; }
+
+.journal-article { min-width: 0; }
+.journal-entry { margin-bottom: 54px; padding-bottom: 54px; border-bottom: 1px solid rgba(200,208,224,.13); scroll-margin-top: 108px; }
+.journal-entry-number { color: var(--red); font: 400 .65rem/1.6 'Share Tech Mono', monospace; letter-spacing: .12em; }
+.journal-entry h2 { max-width: 23ch; margin: 12px 0 24px; color: #fff; font: 400 clamp(2rem,3.2vw,3.1rem)/1.06 'Bebas Neue', sans-serif; letter-spacing: .035em; }
+.journal-prose { max-width: 69ch; }
+.journal-prose p + p { margin-top: 18px; }
+.journal-prose strong { color: #fff; font-weight: 600; }
+.journal-note { max-width: 69ch; margin: 26px 0; padding-left: 20px; border-left: 2px solid var(--red); color: #b7c3d4; font-size: .91rem; }
+.journal-quote { margin: 28px 0; padding-left: 22px; border-left: 2px solid var(--cyan); color: var(--cyan); font-size: clamp(1.15rem,2vw,1.55rem); line-height: 1.6; }
+.journal-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 20px; margin-top: 30px; }
+.journal-gallery figure { min-width: 0; }
+.journal-gallery .journal-wide { grid-column: 1/-1; }
+.journal-gallery .journal-wide img { aspect-ratio: 16/9; object-fit: cover; }
+.journal-photo { display: block; position: relative; border: 1px solid rgba(0,229,255,.18); background: #080b11; text-decoration: none; }
+.journal-photo:hover { border-color: var(--cyan); }
+.journal-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: contain; background: #080b11; }
+.journal-photo::after { content: '↗'; position: absolute; right: 8px; bottom: 8px; display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid rgba(0,229,255,.35); background: rgba(5,5,8,.85); color: var(--cyan); line-height: 1; }
+.journal-page figcaption { display: flex; gap: 12px; margin-top: 10px; color: #a8b4c5; font-size: .76rem; line-height: 1.65; }
+.journal-page figcaption span { flex-shrink: 0; padding-top: 1px; color: var(--cyan); font: 400 .63rem/1.8 'Share Tech Mono', monospace; }
+.journal-photo.is-unavailable { min-height: 180px; aspect-ratio: 4/3; display: grid; place-items: center; padding: 20px; border-style: dashed; }
+.journal-wide .journal-photo.is-unavailable { aspect-ratio: 16/9; }
+.journal-photo.is-unavailable img { display: none; }
+.photo-fallback { color: var(--text); font-size: .85rem; text-align: center; }
+.journal-debug-notes { margin-top: 24px; max-width: 69ch; }
+.journal-debug-notes div + div { margin-top: 22px; }
+.journal-debug-notes h3 { color: #fff; font-size: .96rem; font-weight: 600; }
+.journal-debug-notes p { margin-top: 5px; color: #b7c3d4; font-size: .94rem; }
+
+.journal-end { padding: 0 0 42px; }
+.journal-end h2 { margin-bottom: 20px; color: #fff; font: 400 2.3rem/1.1 'Bebas Neue', sans-serif; letter-spacing: .035em; }
+.journal-end p { max-width: 69ch; }
+.journal-end-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 24px; }
+.journal-end-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--cyan); font-size: .85rem; }
+.journal-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding: 28px 0 36px; border-top: 1px solid rgba(200,208,224,.15); color: #a8b4c5; font: 400 .67rem/1.6 'Share Tech Mono', monospace; }
+
+.journal-lightbox { width: min(1200px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 18px; overflow: auto; border: 1px solid rgba(0,229,255,.5); background: var(--dark); color: var(--text); }
+.journal-lightbox::backdrop { background: rgba(0,0,0,.94); }
+.journal-viewer-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.journal-viewer-top h2 { color: var(--cyan); font: 400 .7rem 'Share Tech Mono', monospace; letter-spacing: .1em; }
+.journal-lightbox button { min-width: 44px; min-height: 44px; padding: 8px 14px; border: 1px solid rgba(0,229,255,.3); background: transparent; color: var(--text); font: inherit; cursor: pointer; }
+.journal-lightbox button:hover { border-color: var(--cyan); color: var(--cyan); }
+.journal-lightbox img { display: block; width: 100%; height: min(65dvh,720px); margin: 14px auto; object-fit: contain; }
+.journal-lightbox img[hidden], #journal-viewer-error[hidden] { display: none; }
+#journal-viewer-error { padding: 50px 16px; text-align: center; }
+.journal-viewer-controls { display: grid; grid-template-columns: 44px minmax(0,1fr) 44px; align-items: center; gap: 14px; }
+.journal-viewer-controls button { padding: 8px; }
+.journal-viewer-controls div { text-align: center; font-size: .8rem; line-height: 1.5; }
+.journal-viewer-controls p + p { margin-top: 5px; }
+.journal-photo-counter { color: var(--cyan); font: 400 .68rem 'Share Tech Mono', monospace; }
+
+@media (max-width: 1000px) {
+  .journal-wrap { width: calc(100% - 80px); }
+  .journal-hero { gap: 38px; }
+  .journal-layout { grid-template-columns: 145px minmax(0,1fr); gap: 36px; }
+}
+@media (max-width: 800px) {
+  .journal-wrap { width: calc(100% - 64px); }
+  .journal-hero { grid-template-columns: 1fr; gap: 0; padding-top: 36px; }
+  .journal-hero > div { display: contents; }
+  .journal-hero .journal-eyebrow { grid-row: 1; }
+  .journal-hero h1 { grid-row: 2; }
+  .journal-hero .journal-cover { grid-row: 3; margin-bottom: 24px; }
+  .journal-hero .journal-deck { grid-row: 4; }
+  .journal-hero .journal-byline { grid-row: 5; }
+  .journal-hero .journal-meta { grid-row: 6; }
+  .journal-hero h1 { font-size: 5rem; }
+  .journal-hero h1 br { display: none; }
+  .journal-cover { max-width: 660px; }
+  .journal-layout { grid-template-columns: 1fr; gap: 36px; padding-top: 36px; }
+  .journal-contents { position: static; }
+  .journal-contents ol { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 20px; }
+  .journal-contents p { margin-top: 14px; }
+  .journal-entry h2 { max-width: 26ch; }
+}
+@media (max-width: 520px) {
+  .journal-wrap { width: calc(100% - 40px); }
+  .journal-header { min-height: 68px; gap: 14px; }
+  .journal-brand { font-size: 1.3rem; }
+  .journal-brand span { display: none; }
+  .journal-header-links { gap: 18px; }
+  .journal-header-links a { font-size: .73rem; }
+  .journal-hero { padding-top: 28px; padding-bottom: 32px; }
+  .journal-hero h1 { margin-block: 18px; font-size: clamp(3.6rem,17vw,4.8rem); }
+  .journal-hero h1 br { display: initial; }
+  .journal-eyebrow { font-size: .6rem; letter-spacing: .1em; }
+  .journal-deck { font-size: .96rem; }
+  .journal-meta { gap: 6px 14px; font-size: .64rem; }
+  .journal-entry { margin-bottom: 36px; padding-bottom: 36px; }
+  .journal-gallery { grid-template-columns: 1fr; gap: 24px; }
+  .journal-gallery .journal-wide img { aspect-ratio: 4/3; object-fit: contain; }
+  .journal-wide .journal-photo.is-unavailable { aspect-ratio: 4/3; }
+  .journal-prose { font-size: .96rem; }
+  .journal-entry h2 { font-size: 2.25rem; }
+  .journal-lightbox { padding: 12px; width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
+  .journal-lightbox img { height: 54dvh; }
+  .journal-viewer-top h2 { font-size: .6rem; }
+  .journal-viewer-controls { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journal-document { scroll-behavior: auto; }
+  .journal-page *, .journal-page *::before, .journal-page *::after { transition: none !important; animation: none !important; }
+}

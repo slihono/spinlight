@@ -1,0 +1,4 @@
+tmp/
+__pycache__/
+docs/
+.ai-style-rules.md
